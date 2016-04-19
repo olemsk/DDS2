@@ -9,9 +9,9 @@ program hdlc_props(input txclk,rxclk,tx,rx,txen,rxen);//, txdone);
 //endproperty
 
 
-//property check1;
-  //@(posedge clk) reset implies state_s == IDLE;
-//endproperty
+property check1;
+  @(posedge clk) reset implies state_s == IDLE;
+endproperty
 
 
 // assert, assume statement
