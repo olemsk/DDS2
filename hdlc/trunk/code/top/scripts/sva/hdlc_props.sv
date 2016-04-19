@@ -1,4 +1,4 @@
-module hdlc_props(txclk,rxclk,tx,rx,txen,rxen, txdone,dat_o,ack_o,clk_i);
+module hdlc_props(txclk,rxclk,tx,rx,txen,rxen, txdone, dat_o, ack_o, clk_i);
 input logic clk_i;
 input logic txclk;
 input logic rxclk;
@@ -23,11 +23,11 @@ input logic [31:0]dat_o;
 //endproperty
 
 property byte1_check;
-@(posedge clk_i) $rose(ack_o) |-> dat_o[7:0] == 8'b0;
+	@(posedge clk_i) $rose(ack_o) |-> dat_o[7:0] == 8'b0;
 endproperty
 
 property byte2_check;
-@(posedge clk_i) $rose(ack_o) |=> dat_o[15:8] == 8'b1;
+	@(posedge clk_i) $rose(ack_o) |=> dat_o[15:8] == 8'b1;
 endproperty
 
 //property byte3_check;
