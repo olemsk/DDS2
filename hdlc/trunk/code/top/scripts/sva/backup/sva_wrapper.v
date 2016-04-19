@@ -5,10 +5,7 @@ module sva_wrapper;
 		.tx(Tx),
 		.rx(Rx),
 		.txen(TxEN),
-		.rxen(RxEN),
-		.clk_i(CLK_I),
-		.dat_o(DAT_O),
-		.ack_o(ACK_O)
-		//.counter(counter)
-);
-endmodule
+		.rxen(RxEN)//,
+		//.txdone(TxDone) // funkar detta? (kanskje DUT/TxBuff/TxDone ?)
+	);
+endmodule 
