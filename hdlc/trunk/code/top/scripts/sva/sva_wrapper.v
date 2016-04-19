@@ -10,6 +10,6 @@ module sva_wrapper;
 		.dat_o(DAT_O),
 		.ack_o(ACK_O),
 		.txdone(DUT.TxDone)
-		//.counter(counter)
+		.counter(DUT.WB_host.counter)
 );
 endmodule
