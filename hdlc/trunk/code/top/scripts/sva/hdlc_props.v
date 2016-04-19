@@ -1,17 +1,17 @@
-program hdlc_props(input txclk,rxclk,tx,rx,txen,rxen, txdone);
+program hdlc_props(input txclk,rxclk,tx,rx,txen,rxen);//, txdone);
 
 
 // sequence definition
 
 // property definition
-property TxDone_check;
-	@(posedge txclk) txdone implies //4.5 avsnitt checks
-endproperty
+//property TxDone_check;
+	//@(posedge txclk) txdone implies //4.5 avsnitt checks/
+//endproperty
 
 
-property check1;
+//property check1;
   //@(posedge clk) reset implies state_s == IDLE;
-endproperty
+//endproperty
 
 
 // assert, assume statement

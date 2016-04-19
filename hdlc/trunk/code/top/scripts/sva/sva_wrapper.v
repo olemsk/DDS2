@@ -5,9 +5,7 @@ module sva_wrapper;
 		.tx(Tx),
 		.rx(Rx),
 		.txen(TxEN),
-		.rxen(RxEN),
-		.txdone(TxDone) // funkar detta? (kanskje DUT/TxBuff/TxDone ?)
+		.rxen(RxEN)//,
+		//.txdone(TxDone) // funkar detta? (kanskje DUT/TxBuff/TxDone ?)
 	);
 endmodule 
-
-// https://verificationacademy.com/forums/systemverilog/question-related-sv-binding
