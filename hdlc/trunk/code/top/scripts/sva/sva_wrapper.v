@@ -9,7 +9,7 @@ module sva_wrapper;
 		.clk_i(CLK_I),
 		.dat_o(DAT_O),
 		.ack_o(ACK_O),
-		.txdone(DUT/TxBuff/TxDone)
+		.txdone(DUT.TxDone)
 		//.counter(counter)
 );
 endmodule
