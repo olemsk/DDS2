@@ -1,3 +1,9 @@
+# Temp files?
+*.v~
+*.sva~
+*.sv~
+*.vhd~
+
 # Object files
 *.o
 *.ko
