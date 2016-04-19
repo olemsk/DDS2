@@ -14,7 +14,7 @@ input logic [31:0]dat_o;
 
 // property definition
 //property TxDone_check;
-	//@(posedge txclk) txdone implies //4.5 avsnitt checks
+//	@(posedge txclk) txdone implies //4.5 avsnitt checks
 //endproperty
 
 
@@ -55,7 +55,8 @@ cover property (@(posedge txclk) !tx ##1 tx [*6] ##1 !tx)
 cover property (@(posedge rxclk) !rx ##1 rx [*6] ##1 !rx)
 	$display($stime,,,"\tRX flag, frame start\n"); // Looking for 01111110
 
-
+cover property (@(posedge txclk) txdone)
+	$display($stime,,,"\tRX flag, frame start\n"); // Looking for 01111110
 
 
 endmodule
