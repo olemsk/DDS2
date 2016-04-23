@@ -1,4 +1,4 @@
-module hdlc_props(txclk,rxclk,tx,rx,txen,rxen, txdone, dat_o, ack_o, clk_i, counter);
+module hdlc_props(txclk,rxclk,tx,rx,txen,rxen, txdone, dat_o, ack_o, clk_i, counter, abortframe, validframe, frame);
 input logic clk_i;
 input logic txclk;
 input logic rxclk;
@@ -10,10 +10,28 @@ input logic txdone;
 input logic [7:0]counter;
 input logic ack_o;
 input logic [31:0]dat_o;
+input logic abortframe;
+input logic validframe;
+input logic frame;
 
 // sequence definition
+sequence framestartTx;
+	!tx ##1 tx[*6] ##1 !tx;
+endsequence
+
+sequence framestartRx;
+	!rx ##1 rx [*6] ##1 !rx;
+endsequence
 
 // property definition
+
+  // Tx assertions
+property TxEnable;
+	@(posedge txclk) $rose(frame) |-> ##2 framestartTx; // and frame and !abortframe
+endproperty
+
+
+
 //property TxDone_check;
 //	@(posedge txclk) txdone implies //4.5 avsnitt checks
 //endproperty
@@ -22,6 +40,8 @@ input logic [31:0]dat_o;
 //property check1;
   //@(posedge clk) reset implies state_s == IDLE;
 //endproperty
+
+
 
 property byte1_check;
 	@(posedge clk_i) $rose(ack_o) |-> dat_o[7:0] == counter;
@@ -40,20 +60,26 @@ endproperty
 //endproperty
 
 // assert, assume statement
-assert_byte1: assert property (byte1_check)
-	$display($time,,,"\tByte 1 PASS:: DAT_O=%b  ACK_O=%b  \n", dat_o,$rose(ack_o));
-else $display($time,,,"\tByte 1 FAIL:: DAT_O=%b  ACK_O=%b \n", dat_o,$rose(ack_o));
+ // Tx assertions
 
+assert_txenable: assert property (TxEnable)
+	$display($time,,,"\tTxEnable PASS:: TxEN=%b  AbortFrame=%b Frame=%b  \n", txen, abortframe, frame);
+else $display($time,,,"\tTxEnable FAIL:: TxEN=%b  AbortFrame=%b Frame=%b  \n", txen, abortframe, frame);
+
+//assert_byte1: assert property (byte1_check)
+//	$display($time,,,"\tByte 1 PASS:: DAT_O=%b  ACK_O=%b  \n", dat_o,$rose(ack_o));
+//else $display($time,,,"\tByte 1 FAIL:: DAT_O=%b  ACK_O=%b \n", dat_o,$rose(ack_o));
+/*
 assert_byte2: assert property (byte2_check)
 	$display($time,,,"\tByte 2 PASS:: DAT_O=%b  ACK_O=%b  \n", dat_o[15:8],$rose(ack_o));
 else $display($time,,,"\tByte 2 FAIL:: DAT_O=%b  ACK_O=%b \n", dat_o[15:8],$rose(ack_o));
-
+*/
 
 //cover statement
 // Reuse below with a sequence with formal parameters
-cover property (@(posedge txclk) !tx ##1 tx [*6] ##1 !tx)
+cover property (@(posedge txclk) framestartTx)
 	$display($stime,,,"\tTX flag, frame start\n"); // Looking for 01111110
-cover property (@(posedge rxclk) !rx ##1 rx [*6] ##1 !rx)
+cover property (@(posedge rxclk) framestartRx)
 	$display($stime,,,"\tRX flag, frame start\n"); // Looking for 01111110
 
 //cover property (@(posedge txclk) txdone)

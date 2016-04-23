@@ -10,6 +10,9 @@ module sva_wrapper;
 		.dat_o(DAT_O),
 		.ack_o(ACK_O),
 		.txdone(DUT.TxDone),
-		.counter(DUT.WB_host.counter)
+		.counter(DUT.WB_host.counter),
+		.abortframe(DUT.Tx_AbortFrame_D1),
+		.validframe(DUT.Tx_ValidFrame_D1),
+		.frame(DUT.TxCore.Frame_i) // Internal Frame strobe to flag insert block
 );
 endmodule
