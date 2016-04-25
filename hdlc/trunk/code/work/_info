@@ -1,0 +1,835 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/henriss/DDS2/hdlc/trunk/code
+T_opt
+!s110 1461074541
+V[Ej^Ef3R?GNF[fk6KWg3M2
+Z1 04 7 11 work hdlc_tb hdlc_beh_tb 1
+Z2 04 11 4 work sva_wrapper fast 0
+=1-0015173b1504-57163a6c-cd47f-659d
+Z3 o-quiet -auto_acc_if_foreign -work work
+n@_opt
+Z4 OE;O;10.3c_2;59
+R0
+T_opt1
+Z5 !s110 1461579396
+V19zRWIhbRZKc56Y?XEE5G0
+R1
+R2
+=1-0015173b1504-571dee83-84750-3c20
+R3
+n@_opt1
+R4
+R0
+T_opt2
+!s110 1461235306
+V07^m_C;GG1]<n[;a;o_2I0
+R1
+R2
+=1-0015173b1504-5718ae68-aa920-4ee2
+R3
+n@_opt2
+R4
+R0
+Eflag_ins_ent
+Z6 w1461063501
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z9 8../code/tx/core/flag_ins.vhd
+Z10 F../code/tx/core/flag_ins.vhd
+l0
+L40
+VYE5]2o1nT?d:SI?9<ZD9C2
+!s100 F9FFeRh1mYO4IBzYl=8W<0
+Z11 OE;C;10.3c_2;59
+32
+Z12 !s110 1461315573
+!i10b 1
+Z13 !s108 1461315573.605846
+Z14 !s90 -reportprogress|300|-work|work|../code/tx/core/flag_ins.vhd|
+Z15 !s107 ../code/tx/core/flag_ins.vhd|
+!i113 0
+Z16 o-work work
+Z17 tExplicit 1
+Aflag_ins_beh
+R7
+R8
+DEx4 work 12 flag_ins_ent 0 22 YE5]2o1nT?d:SI?9<ZD9C2
+32
+R12
+l56
+L54
+VC07j@BiT=:3T4JhSS[OWd2
+!s100 Lha9OIb:JNQ96=^5L0ieC0
+R11
+!i10b 1
+R13
+R14
+R15
+!i113 0
+R16
+R17
+Eflagdetect_ent
+Z18 w1461063498
+R7
+R8
+R0
+Z19 8../code/rx/core/flag_detect.vhd
+Z20 F../code/rx/core/flag_detect.vhd
+l0
+L54
+Vam<5[M:HQ5OanVzG2z0?M3
+!s100 ^]Lie1@d<miH:0h0f@JhS2
+R11
+32
+Z21 !s110 1461315570
+!i10b 1
+Z22 !s108 1461315570.529158
+Z23 !s90 -reportprogress|300|-work|work|../code/rx/core/flag_detect.vhd|
+Z24 !s107 ../code/rx/core/flag_detect.vhd|
+!i113 0
+R16
+R17
+Aflagdetect_beh
+R7
+R8
+DEx4 work 14 flagdetect_ent 0 22 am<5[M:HQ5OanVzG2z0?M3
+32
+R21
+l72
+L68
+V7Em_BVOXI0U2G`z_2>ZFP3
+!s100 odVhjgg9SYMJ:Cnj6kc;E2
+R11
+!i10b 1
+R22
+R23
+R24
+!i113 0
+R16
+R17
+Ehdlc_ent
+Z25 w1461063500
+Z26 DPx4 hdlc 19 hdlc_components_pkg 0 22 73`U1P40QAacc?<1GQlh^0
+R7
+R8
+R0
+Z27 8../code/top/core/hdlc.vhd
+Z28 F../code/top/core/hdlc.vhd
+l0
+L50
+V23QzV2`Wkl1nlBlDfVTQL0
+!s100 @j]iCIE?`8SRBd1A@]_Z73
+R11
+32
+Z29 !s110 1461315576
+!i10b 1
+Z30 !s108 1461315576.766331
+Z31 !s90 -reportprogress|300|-work|work|../code/top/core/hdlc.vhd|
+Z32 !s107 ../code/top/core/hdlc.vhd|
+!i113 0
+R16
+R17
+Ahdlc_str
+R26
+R7
+R8
+DEx4 work 8 hdlc_ent 0 22 23QzV2`Wkl1nlBlDfVTQL0
+32
+R29
+l136
+L76
+V]inF`^8=OAW0V[gUdii1B3
+!s100 2oVJUSlFkc_O;cOMaMbUg2
+R11
+!i10b 1
+R30
+R31
+R32
+!i113 0
+R16
+R17
+vhdlc_props
+Z33 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z34 !s110 1461579537
+!i10b 1
+!s100 ?5aV2E[DhCcRHEeSUea`D0
+IR6MJ;cPf8B?C;9SEOdbSV2
+Z35 V`JN@9S9cnhjKRR_L]QIcM3
+!s105 hdlc_props_sv_unit
+S1
+R0
+w1461577369
+8top/scripts/sva/hdlc_props.sv
+Ftop/scripts/sva/hdlc_props.sv
+L0 1
+Z36 OE;L;10.3c_2;59
+r1
+!s85 0
+31
+!s108 1461579537.007604
+!s107 top/scripts/sva/hdlc_props.sv|
+!s90 -reportprogress|300|-sv|top/scripts/sva/hdlc_props.sv|
+!i113 0
+Z37 o-sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Ehdlc_tb
+R6
+R26
+Z38 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z39 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R7
+R8
+R0
+Z40 8../code/top/tb/hdlc_tb.vhd
+Z41 F../code/top/tb/hdlc_tb.vhd
+l0
+L60
+VVCo>ehcOfVE6oZ7dEjk6h1
+!s100 3^HfE:bbMg?Zj79M^NVP72
+R11
+32
+Z42 !s110 1461315577
+!i10b 1
+Z43 !s108 1461315577.261702
+Z44 !s90 -reportprogress|300|-work|work|../code/top/tb/hdlc_tb.vhd|-explicit|
+Z45 !s107 ../code/top/tb/hdlc_tb.vhd|
+!i113 0
+Z46 o-work work -explicit
+R17
+Ahdlc_beh_tb
+R26
+R38
+R39
+R7
+R8
+DEx4 work 7 hdlc_tb 0 22 VCo>ehcOfVE6oZ7dEjk6h1
+32
+R42
+l95
+L66
+VH_5o_CShDFRYlondgU6@?3
+!s100 ]dj[V><:SHZUUk_9:YcZS1
+R11
+!i10b 1
+R43
+R44
+R45
+!i113 0
+R46
+R17
+Erxbuff_ent
+Z47 w1461063499
+Z48 DPx7 utility 9 tools_pkg 0 22 :jd<:SC0d>We0XR=XMKA22
+Z49 DPx6 memlib 7 mem_pkg 0 22 BeW6Q8_:9Y4<i0mLNNRMI2
+R38
+R39
+R7
+R8
+R0
+Z50 8../code/top/core/RxBuff.vhd
+Z51 F../code/top/core/RxBuff.vhd
+l0
+L53
+VCGmSbUA[>O^i?ai]jPWIo2
+!s100 nN@b7:LXb95U`hHT3?kE02
+R11
+32
+Z52 !s110 1461315569
+!i10b 1
+Z53 !s108 1461315569.431550
+Z54 !s90 -reportprogress|300|-work|work|../code/top/core/RxBuff.vhd|-explicit|
+Z55 !s107 ../code/top/core/RxBuff.vhd|
+!i113 0
+R46
+R17
+Arxbuff_rtl
+R48
+R49
+R38
+R39
+R7
+R8
+DEx4 work 10 rxbuff_ent 0 22 CGmSbUA[>O^i?ai]jPWIo2
+32
+R52
+l107
+L76
+VUjH14D9X3QinoboX?:nA_2
+!s100 oV9eAag8cX>JH1WcOD1fC0
+R11
+!i10b 1
+R53
+R54
+R55
+!i113 0
+R46
+R17
+Erxchannel_ent
+R18
+R26
+R7
+R8
+R0
+Z56 8../code/rx/core/RxChannel.vhd
+Z57 F../code/rx/core/RxChannel.vhd
+l0
+L57
+ViJdif3C1lb=nX0On?3bT_0
+!s100 PZMfP3;`cQI6H2QI8jb>U2
+R11
+32
+Z58 !s110 1461315571
+!i10b 1
+Z59 !s108 1461315571.467522
+Z60 !s90 -reportprogress|300|-work|work|../code/rx/core/RxChannel.vhd|
+Z61 !s107 ../code/rx/core/RxChannel.vhd|
+!i113 0
+R16
+R17
+Arxchannel_beh
+R26
+R7
+R8
+DEx4 work 13 rxchannel_ent 0 22 iJdif3C1lb=nX0On?3bT_0
+32
+R58
+l87
+L74
+VZ`A<kzYC@HVOT7ETWWkP61
+!s100 X[R_O]nan=li?_nXPm2nl1
+R11
+!i10b 1
+R59
+R60
+R61
+!i113 0
+R16
+R17
+Erxcont_ent
+R18
+R7
+R8
+R0
+Z62 8../code/rx/core/Rxcont.vhd
+Z63 F../code/rx/core/Rxcont.vhd
+l0
+L48
+V0nQ7f9LPWVcUnBVf?5nL^1
+!s100 gobK@]?We^zYDk=WB4o8H0
+R11
+32
+R58
+!i10b 1
+Z64 !s108 1461315570.966538
+Z65 !s90 -reportprogress|300|-work|work|../code/rx/core/Rxcont.vhd|
+Z66 !s107 ../code/rx/core/Rxcont.vhd|
+!i113 0
+R16
+R17
+Arxcont_beh
+R7
+R8
+DEx4 work 10 rxcont_ent 0 22 0nQ7f9LPWVcUnBVf?5nL^1
+32
+R58
+l70
+L66
+VY:3]Lned=Ne=S`07;i?L10
+!s100 2Ce0_>;5JzkkALKM1LaM=3
+R11
+!i10b 1
+R64
+R65
+R66
+!i113 0
+R16
+R17
+Erxfcs_ent
+R47
+Z67 DPx4 hdlc 12 pck_crc16_d8 0 22 VVF8U3X@CW_nXS64djUDB3
+R38
+R39
+R7
+R8
+R0
+Z68 8../code/top/core/RxFCS.vhd
+Z69 F../code/top/core/RxFCS.vhd
+l0
+L53
+V<_RGAk^jBY1E_EX7<hN2e2
+!s100 _cVMcYc3]V?<bLIOEL2c@2
+R11
+32
+Z70 !s110 1461315568
+!i10b 1
+Z71 !s108 1461315568.845513
+Z72 !s90 -reportprogress|300|-work|work|../code/top/core/RxFCS.vhd|
+Z73 !s107 ../code/top/core/RxFCS.vhd|
+!i113 0
+R16
+R17
+Arxfcs_rtl
+R67
+R38
+R39
+R7
+R8
+DEx4 work 9 rxfcs_ent 0 22 <_RGAk^jBY1E_EX7<hN2e2
+32
+R70
+l85
+L73
+V7EZ8RN`e5IXO0d=fLzgOY3
+!s100 HN1UcK=X6VLOLXP44@5iZ0
+R11
+!i10b 1
+R71
+R72
+R73
+!i113 0
+R16
+R17
+Erxsynch_ent
+R47
+R7
+R8
+R0
+Z74 8../code/top/core/RxSync.vhd
+Z75 F../code/top/core/RxSync.vhd
+l0
+L43
+VRZ8BnT^67^0Rj3faDDHE_2
+!s100 _7d6lDJ=I7@:L5M8K7^Cm2
+R11
+32
+Z76 !s110 1461315572
+!i10b 1
+Z77 !s108 1461315571.992830
+Z78 !s90 -reportprogress|300|-work|work|../code/top/core/RxSync.vhd|
+Z79 !s107 ../code/top/core/RxSync.vhd|
+!i113 0
+R16
+R17
+Arxsynch_rtl
+R7
+R8
+DEx4 work 11 rxsynch_ent 0 22 RZ8BnT^67^0Rj3faDDHE_2
+32
+R76
+l70
+L68
+V1a@m;aENeAR1J]ETGIa251
+!s100 F_Hfe<ZKzDPjgeSPRZ4f<2
+R11
+!i10b 1
+R77
+R78
+R79
+!i113 0
+R16
+R17
+vsva_wrapper
+R33
+R34
+!i10b 1
+!s100 U6KVbA4b0JfE1ggcii=N=1
+Idd4I]<mVf555X0g0GEOkY2
+R35
+!s105 sva_wrapper_v_unit
+S1
+R0
+w1461074444
+Z80 8top/scripts/sva/sva_wrapper.v
+Z81 Ftop/scripts/sva/sva_wrapper.v
+L0 1
+R36
+r1
+!s85 0
+31
+!s108 1461579537.436863
+!s107 top/scripts/sva/sva_wrapper.v|
+!s90 -reportprogress|300|-sv|top/scripts/sva/sva_wrapper.v|
+!i113 0
+R37
+Etxbuff_ent
+R47
+R48
+R49
+R38
+R39
+R7
+R8
+R0
+Z82 8../code/top/core/TxBuff.vhd
+Z83 F../code/top/core/TxBuff.vhd
+l0
+L49
+VS38>ck>B=jFj5H;YYFgI@1
+!s100 k>o;I?75A8TUgYYTl=2T[1
+R11
+32
+R12
+!i10b 1
+Z84 !s108 1461315573.080712
+Z85 !s90 -reportprogress|300|-work|work|../code/top/core/TxBuff.vhd|-explicit|
+Z86 !s107 ../code/top/core/TxBuff.vhd|
+!i113 0
+R46
+R17
+Atxbuff_beh
+R48
+R49
+R38
+R39
+R7
+R8
+DEx4 work 10 txbuff_ent 0 22 S38>ck>B=jFj5H;YYFgI@1
+32
+R12
+l93
+L68
+V_:EVacWF@B;UMZVG_TGTe2
+!s100 :@DZ;]CI0L3=JAb8[cn4f3
+R11
+!i10b 1
+R84
+R85
+R86
+!i113 0
+R46
+R17
+Etxchannel_ent
+R6
+R26
+R7
+R8
+R0
+Z87 8../code/tx/core/TxChannel.vhd
+Z88 F../code/tx/core/TxChannel.vhd
+l0
+L43
+VlkG=7LBFm?=9`z0mMjACX1
+!s100 ;4nSb<`3jIE]5n=jmRo_92
+R11
+32
+Z89 !s110 1461315575
+!i10b 1
+Z90 !s108 1461315575.051716
+Z91 !s90 -reportprogress|300|-work|work|../code/tx/core/TxChannel.vhd|
+Z92 !s107 ../code/tx/core/TxChannel.vhd|
+!i113 0
+R16
+R17
+Atxchannel_str
+R26
+R7
+R8
+DEx4 work 13 txchannel_ent 0 22 lkG=7LBFm?=9`z0mMjACX1
+32
+R89
+l71
+L60
+VRZRH3;:=edi==jjADdkTz3
+!s100 mh>@9IcKR50]HACoVCbK81
+R11
+!i10b 1
+R90
+R91
+R92
+!i113 0
+R16
+R17
+Etxcont_ent
+R6
+R7
+R8
+R0
+Z93 8../code/tx/core/TXcont.vhd
+Z94 F../code/tx/core/TXcont.vhd
+l0
+L39
+V:TbGNCOzi@G4LYZH77;kg3
+!s100 JcR3]4Um7oRYjVag]em<V1
+R11
+32
+Z95 !s110 1461315574
+!i10b 1
+Z96 !s108 1461315574.610865
+Z97 !s90 -reportprogress|300|-work|work|../code/tx/core/TXcont.vhd|
+Z98 !s107 ../code/tx/core/TXcont.vhd|
+!i113 0
+R16
+R17
+Atxcont_beh
+R7
+R8
+DEx4 work 10 txcont_ent 0 22 :TbGNCOzi@G4LYZH77;kg3
+32
+R95
+l58
+L56
+VS=eT:30Wn:>8ghH4D;o;h1
+!s100 ^PSl2O1MVSzm35:WGmg3g1
+R11
+!i10b 1
+R96
+R97
+R98
+!i113 0
+R16
+R17
+Etxfcs_ent
+R47
+R67
+R7
+R8
+R0
+Z99 8../code/top/core/TxFCS.vhd
+Z100 F../code/top/core/TxFCS.vhd
+l0
+L83
+Vk_1I9l0NfN[C09mm]iXio3
+!s100 N1n6k==`JBzDZmo4zHRDY2
+R11
+32
+R76
+!i10b 1
+Z101 !s108 1461315572.524608
+Z102 !s90 -reportprogress|300|-work|work|../code/top/core/TxFCS.vhd|
+Z103 !s107 ../code/top/core/TxFCS.vhd|
+!i113 0
+R16
+R17
+Atxfcs_beh
+R67
+R7
+R8
+DEx4 work 9 txfcs_ent 0 22 k_1I9l0NfN[C09mm]iXio3
+32
+R76
+l109
+L107
+VA44I4af19`ObII9l2mlbB2
+!s100 zmL^FELhNh@mdHc0fDZTd1
+R11
+!i10b 1
+R101
+R102
+R103
+!i113 0
+R16
+R17
+Etxsynch_ent
+R25
+R7
+R8
+R0
+Z104 8../code/top/core/TxSync.vhd
+Z105 F../code/top/core/TxSync.vhd
+l0
+L43
+Vl6bKXRVmSl:1]?eoGmU^N2
+!s100 iKdZ86?7?6QmHO8k1TSo72
+R11
+32
+R89
+!i10b 1
+Z106 !s108 1461315575.544977
+Z107 !s90 -reportprogress|300|-work|work|../code/top/core/TxSync.vhd|
+Z108 !s107 ../code/top/core/TxSync.vhd|
+!i113 0
+R16
+R17
+Atxsynch_rtl
+R7
+R8
+DEx4 work 11 txsynch_ent 0 22 l6bKXRVmSl:1]?eoGmU^N2
+32
+R89
+l72
+L69
+Vd>;7doiWaDYMcBnamQD^Z0
+!s100 C`eSi5miGGj1;5n3`DOZK1
+R11
+!i10b 1
+R106
+R107
+R108
+!i113 0
+R16
+R17
+Ewb_if_ent
+R25
+R7
+R8
+R0
+Z109 8../code/top/core/WB_IF.vhd
+Z110 F../code/top/core/WB_IF.vhd
+l0
+L46
+VjC3[`SBGoaRAh3h1I?;7z3
+!s100 F^E]dl:PWn`^QM^G^EaEG2
+R11
+32
+R29
+!i10b 1
+Z111 !s108 1461315576.169774
+Z112 !s90 -reportprogress|300|-work|work|../code/top/core/WB_IF.vhd|
+Z113 !s107 ../code/top/core/WB_IF.vhd|
+!i113 0
+R16
+R17
+Awb_if_rtl
+R7
+R8
+DEx4 work 9 wb_if_ent 0 22 jC3[`SBGoaRAh3h1I?;7z3
+32
+R29
+l112
+L90
+VB3RCQl3B_UR?PF=Pd`72d3
+!s100 eg>42:LW8Yb@eZ^0]PI@;3
+R11
+!i10b 1
+R111
+R112
+R113
+!i113 0
+R16
+R17
+Ezerodetect_ent
+R18
+R7
+R8
+R0
+Z114 8../code/rx/core/Zero_detect.vhd
+Z115 F../code/rx/core/Zero_detect.vhd
+l0
+L58
+VU2cK2EH>7lbF@@T_oLAcc2
+!s100 _6BTGY[@JDbe4oL1=f6HH0
+R11
+32
+R21
+!i10b 1
+Z116 !s108 1461315569.965217
+Z117 !s90 -reportprogress|300|-work|work|../code/rx/core/Zero_detect.vhd|
+Z118 !s107 ../code/rx/core/Zero_detect.vhd|
+!i113 0
+R16
+R17
+Azerodetect_beh
+R7
+R8
+DEx4 work 14 zerodetect_ent 0 22 U2cK2EH>7lbF@@T_oLAcc2
+32
+R21
+l81
+L76
+VkLSLVUlL4b1b>=g5:5CMC0
+!s100 ;PSddSDSZYA49<TXz_S[K2
+R11
+!i10b 1
+R116
+R117
+R118
+!i113 0
+R16
+R17
+Ezeroins_ent
+R6
+R7
+R8
+R0
+Z119 8../code/tx/core/zero_ins.vhd
+Z120 F../code/tx/core/zero_ins.vhd
+l0
+L51
+VXdec5mG41kDkaEfaaXZnj2
+!s100 C7LcFm=o_F6R^ff_C8Jl[0
+R11
+32
+R95
+!i10b 1
+Z121 !s108 1461315574.133805
+Z122 !s90 -reportprogress|300|-work|work|../code/tx/core/zero_ins.vhd|
+Z123 !s107 ../code/tx/core/zero_ins.vhd|
+!i113 0
+R16
+R17
+Azero_ins_beh
+R7
+R8
+DEx4 work 11 zeroins_ent 0 22 Xdec5mG41kDkaEfaaXZnj2
+32
+R95
+l76
+L69
+VCXC8W;;=9495fHh;R?Wea2
+!s100 WRH]TzzfI8@RWde[D_z3a2
+R11
+!i10b 1
+R121
+R122
+R123
+!i113 0
+R16
+R17
+vzzbind_to_vhdl_implicitzz_sva_wrapper_2_4_0
+R33
+R5
+!i10b 1
+!s100 @Q;aJzL8`T;EU:TZECC@23
+I;HQ[d2=5IPhmR3Z@V3PL^0
+R35
+Z124 !s105 zzbind_to_vhdl_implicitzz_bind_9PGZUIKa5b4fZD9BZleI22_sv_unit
+S1
+R0
+Z125 w1461579396
+R80
+R81
+Z126 8/home/henriss/DDS2/hdlc/trunk/code/work/_temp/zzbind_to_vhdl_implicitzz_bind_9PGZUIKa5b4fZD9BZleI22.sv
+Z127 F/home/henriss/DDS2/hdlc/trunk/code/work/_temp/zzbind_to_vhdl_implicitzz_bind_9PGZUIKa5b4fZD9BZleI22.sv
+L0 2
+R36
+r1
+!s85 0
+31
+Z128 !s108 1461579396.109304
+Z129 !s107 /home/henriss/DDS2/hdlc/trunk/code/work/_temp/zzbind_to_vhdl_implicitzz_bind_9PGZUIKa5b4fZD9BZleI22.sv|
+Z130 !s90 -sv|-vopt|-quiet|-work|work|-nolock|/home/henriss/DDS2/hdlc/trunk/code/work/_temp/zzbind_to_vhdl_implicitzz_bind_9PGZUIKa5b4fZD9BZleI22.sv|
+!i113 0
+Z131 o-quiet -sv -work work -nolock -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vzzbind_to_vhdl_implicitzz_sva_wrapper_2_4_0_bind
+R33
+R5
+!i10b 1
+!s100 ZJOAnK98P:33EnZ^EREGj0
+IMe@f:3EYdT@KJ^8FDnMN[2
+R35
+R124
+S1
+R0
+R125
+R80
+R81
+R126
+R127
+L0 2
+R36
+r1
+!s85 0
+31
+R128
+R129
+R130
+!i113 0
+R131

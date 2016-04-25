@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/henriss/DDS2/hdlc/trunk/code/top
+vhdlc_props
+Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+!s110 1461070084
+!i10b 1
+!s100 0GWfZZ6V=LL]<]9H[P2;z2
+In;95UVHm_h3CM6N5JY>PX2
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+!s105 hdlc_props_sv_unit
+S1
+R0
+w1461060082
+8scripts/sva/hdlc_props.sv
+Fscripts/sva/hdlc_props.sv
+L0 1
+Z3 OE;L;10.3c_2;59
+r1
+!s85 0
+31
+!s108 1461070083.894484
+!s107 scripts/sva/hdlc_props.sv|
+!s90 -reportprogress|300|-sv|scripts/sva/hdlc_props.sv|
+!i113 0
+Z4 o-sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vsva_wrapper
+R1
+!s110 1461070088
+!i10b 1
+!s100 SmfiU4<M980f5Ce6CHi2O2
+I_o1WW8Pn:E8RkHGK>IA4i0
+R2
+!s105 sva_wrapper_v_unit
+S1
+R0
+w1460978990
+8scripts/sva/sva_wrapper.v
+Fscripts/sva/sva_wrapper.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1461070088.071523
+!s107 scripts/sva/sva_wrapper.v|
+!s90 -reportprogress|300|-sv|scripts/sva/sva_wrapper.v|
+!i113 0
+R4
