@@ -35,11 +35,15 @@ endsequence
 
   // Tx assertions
 property TxEnable;
-	@(posedge txclk) $rose(frame) and !abortframe |-> ##2 framestartTx; // and frame
+	@(posedge txclk) $rose(frame) and !abortframe and txen |-> ##2 framestartTx; // and frame
 endproperty
 
 property generated_abortpattern;
-	@(posedge txclk)
+	@(posedge txclk) @rose(abortframe) and txen |-> ##1 abortpatternTx;
+endproperty
+
+property generated_end_of_frame_pattern;
+	@(posedge txclk) @fell(frame) and txen |-> 
 endproperty
 
 //property TxDone_check;
