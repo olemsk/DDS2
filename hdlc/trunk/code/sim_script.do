@@ -1,6 +1,8 @@
 # Type: vsim -novopt -do top/scripts/model/build_hdlc_top.do
 # to start Questasim, then run this script by: do sim_script.do
 
+# NOTE: Adding comments after a command fucks shit up!
+
 # Compile
 vlog -sv top/scripts/sva/hdlc_props.v
 vlog -sv top/scripts/sva/sva_wrapper.v
