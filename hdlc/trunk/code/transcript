@@ -30,7 +30,7 @@
 # Reading /eda/tools/mentor/questasim.10.3c_2/questasim/linux/../modelsim.ini
 # "memlib" maps to directory ./memlib. (Default mapping)
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:22 on Apr 25,2016
+# Start time: 12:25:54 on Apr 25,2016
 # vcom -reportprogress 300 -work utility ../code/tools_pkg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -40,10 +40,10 @@
 # -- Compiling package tools_pkg
 # -- Compiling package body tools_pkg
 # -- Loading package tools_pkg
-# End time: 11:38:22 on Apr 25,2016, Elapsed time: 0:00:00
+# End time: 12:25:54 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:22 on Apr 25,2016
+# Start time: 12:25:54 on Apr 25,2016
 # vcom -reportprogress 300 -work memlib ../code/spmem.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -52,10 +52,10 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity Spmem_ent
 # -- Compiling architecture spmem_beh of Spmem_ent
-# End time: 11:38:23 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:25:54 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:23 on Apr 25,2016
+# Start time: 12:25:55 on Apr 25,2016
 # vcom -reportprogress 300 -work memlib ../code/mem_pkg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -64,10 +64,10 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Loading package tools_pkg
 # -- Compiling package mem_pkg
-# End time: 11:38:23 on Apr 25,2016, Elapsed time: 0:00:00
+# End time: 12:25:55 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:23 on Apr 25,2016
+# Start time: 12:25:55 on Apr 25,2016
 # vcom -reportprogress 300 -work hdlc ../code/libs/PCK_CRC16_D8.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -75,19 +75,19 @@
 # -- Compiling package PCK_CRC16_D8
 # -- Compiling package body PCK_CRC16_D8
 # -- Loading package PCK_CRC16_D8
-# End time: 11:38:24 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:25:56 on Apr 25,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:24 on Apr 25,2016
+# Start time: 12:25:56 on Apr 25,2016
 # vcom -reportprogress 300 -work hdlc ../code/libs/hdlc_components_pkg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling package hdlc_components_pkg
-# End time: 11:38:24 on Apr 25,2016, Elapsed time: 0:00:00
+# End time: 12:25:56 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:24 on Apr 25,2016
+# Start time: 12:25:56 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/top/core/RxFCS.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -97,10 +97,10 @@
 # -- Loading package PCK_CRC16_D8
 # -- Compiling entity RxFCS_ent
 # -- Compiling architecture RxFCS_rtl of RxFCS_ent
-# End time: 11:38:25 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:25:57 on Apr 25,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:25 on Apr 25,2016
+# Start time: 12:25:57 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/top/core/RxBuff.vhd -explicit 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -111,40 +111,40 @@
 # -- Loading package mem_pkg
 # -- Compiling entity RxBuff_ent
 # -- Compiling architecture RxBuff_rtl of RxBuff_ent
-# End time: 11:38:26 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:25:57 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:26 on Apr 25,2016
+# Start time: 12:25:57 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/rx/core/Zero_detect.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity ZeroDetect_ent
 # -- Compiling architecture ZeroDetect_beh of ZeroDetect_ent
-# End time: 11:38:26 on Apr 25,2016, Elapsed time: 0:00:00
+# End time: 12:25:58 on Apr 25,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:26 on Apr 25,2016
+# Start time: 12:25:58 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/rx/core/flag_detect.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity FlagDetect_ent
 # -- Compiling architecture FlagDetect_beh of FlagDetect_ent
-# End time: 11:38:27 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:25:58 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:27 on Apr 25,2016
+# Start time: 12:25:58 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/rx/core/Rxcont.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity rxcont_ent
 # -- Compiling architecture rxcont_beh of rxcont_ent
-# End time: 11:38:27 on Apr 25,2016, Elapsed time: 0:00:00
+# End time: 12:25:59 on Apr 25,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:27 on Apr 25,2016
+# Start time: 12:25:59 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/rx/core/RxChannel.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -152,20 +152,20 @@
 # -- Loading package hdlc_components_pkg
 # -- Compiling entity RxChannel_ent
 # -- Compiling architecture RxChannel_beh of RxChannel_ent
-# End time: 11:38:28 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:25:59 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:28 on Apr 25,2016
+# Start time: 12:25:59 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/top/core/RxSync.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity RxSynch_ent
 # -- Compiling architecture RxSynch_rtl of RxSynch_ent
-# End time: 11:38:29 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:26:00 on Apr 25,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:29 on Apr 25,2016
+# Start time: 12:26:00 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/top/core/TxFCS.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -173,10 +173,10 @@
 # -- Loading package PCK_CRC16_D8
 # -- Compiling entity Txfcs_ent
 # -- Compiling architecture Txfcs_beh of Txfcs_ent
-# End time: 11:38:29 on Apr 25,2016, Elapsed time: 0:00:00
+# End time: 12:26:00 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:29 on Apr 25,2016
+# Start time: 12:26:00 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/top/core/TxBuff.vhd -explicit 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -187,40 +187,40 @@
 # -- Loading package mem_pkg
 # -- Compiling entity TxBuff_ent
 # -- Compiling architecture TxBuff_beh of TxBuff_ent
-# End time: 11:38:30 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:26:01 on Apr 25,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:30 on Apr 25,2016
+# Start time: 12:26:01 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/tx/core/flag_ins.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity flag_ins_ent
 # -- Compiling architecture flag_ins_beh of flag_ins_ent
-# End time: 11:38:30 on Apr 25,2016, Elapsed time: 0:00:00
+# End time: 12:26:01 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:30 on Apr 25,2016
+# Start time: 12:26:01 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/tx/core/zero_ins.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity ZeroIns_ent
 # -- Compiling architecture zero_ins_beh of ZeroIns_ent
-# End time: 11:38:31 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:26:02 on Apr 25,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:31 on Apr 25,2016
+# Start time: 12:26:02 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/tx/core/TXcont.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity TxCont_ent
 # -- Compiling architecture TxCont_beh of TxCont_ent
-# End time: 11:38:31 on Apr 25,2016, Elapsed time: 0:00:00
+# End time: 12:26:02 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:32 on Apr 25,2016
+# Start time: 12:26:02 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/tx/core/TxChannel.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -228,30 +228,30 @@
 # -- Loading package hdlc_components_pkg
 # -- Compiling entity TxChannel_ent
 # -- Compiling architecture Txchannel_str of TxChannel_ent
-# End time: 11:38:32 on Apr 25,2016, Elapsed time: 0:00:00
+# End time: 12:26:02 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:32 on Apr 25,2016
+# Start time: 12:26:02 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/top/core/TxSync.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity txSynch_ent
 # -- Compiling architecture TxSynch_rtl of txSynch_ent
-# End time: 11:38:33 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:26:03 on Apr 25,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:33 on Apr 25,2016
+# Start time: 12:26:03 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/top/core/WB_IF.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity WB_IF_ent
 # -- Compiling architecture WB_IF_rtl of WB_IF_ent
-# End time: 11:38:33 on Apr 25,2016, Elapsed time: 0:00:00
+# End time: 12:26:03 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:33 on Apr 25,2016
+# Start time: 12:26:04 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/top/core/hdlc.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -259,10 +259,10 @@
 # -- Loading package hdlc_components_pkg
 # -- Compiling entity hdlc_ent
 # -- Compiling architecture hdlc_str of hdlc_ent
-# End time: 11:38:34 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:26:04 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vcom 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:34 on Apr 25,2016
+# Start time: 12:26:04 on Apr 25,2016
 # vcom -reportprogress 300 -work work ../code/top/tb/hdlc_tb.vhd -explicit 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -272,31 +272,29 @@
 # -- Loading package hdlc_components_pkg
 # -- Compiling entity hdlc_tb
 # -- Compiling architecture hdlc_beh_tb of hdlc_tb
-# End time: 11:38:35 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:26:05 on Apr 25,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-vlog -sv top/scripts/sva/hdlc_props.v
+do sim_script.do
 # QuestaSim vlog 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:38:59 on Apr 25,2016
+# Start time: 12:26:13 on Apr 25,2016
 # vlog -reportprogress 300 -sv top/scripts/sva/hdlc_props.v 
 # -- Compiling module hdlc_props
 # 
 # Top level modules:
 # 	hdlc_props
-# End time: 11:39:00 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:26:13 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vlog -sv top/scripts/sva/sva_wrapper.v
 # QuestaSim vlog 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:39:06 on Apr 25,2016
+# Start time: 12:26:14 on Apr 25,2016
 # vlog -reportprogress 300 -sv top/scripts/sva/sva_wrapper.v 
 # -- Compiling module sva_wrapper
 # 
 # Top level modules:
 # 	sva_wrapper
-# End time: 11:39:06 on Apr 25,2016, Elapsed time: 0:00:00
+# End time: 12:26:14 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vsim -c work.hdlc_tb work.sva_wrapper
 # vsim -novopt -do "top/scripts/model/build_hdlc_top.do" 
-# Start time: 11:39:58 on Apr 25,2016
+# Start time: 12:26:14 on Apr 25,2016
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # Loading std.standard
 # Refreshing /home/olemsk/Project/DDS2/hdlc/trunk/code/work.hdlc_tb(hdlc_beh_tb)
@@ -357,75 +355,32 @@ vsim -c work.hdlc_tb work.sva_wrapper
 #    Time: 0 ns  Iteration: 0  Instance: /sva_wrapper File: top/scripts/sva/hdlc_props.v
 # FATAL ERROR while loading design
 # Error loading design
-vsim -c work.hdlc_tb work.sva_wrapper
-# vsim 
-# Start time: 11:40:19 on Apr 25,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading std.standard
-# Loading verilog.vl_resolve(body)
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading hdlc.hdlc_components_pkg
-# Loading verilog.vl_types(body)
-# Loading work.hdlc_tb(hdlc_beh_tb)#1
-# Loading sv_std.std
-# Loading work.sva_wrapper(fast)
-# Loading utility.tools_pkg(body)
-# Loading memlib.mem_pkg
-# Loading hdlc.pck_crc16_d8(body)
-# Loading work.hdlc_ent(hdlc_str)#1
-# Loading work.wb_if_ent(wb_if_rtl)#1
-# Loading work.rxbuff_ent(rxbuff_rtl)#1
-# Loading work.hdlc_props(fast)
-# ** Warning: (vsim-3015) top/scripts/sva/sva_wrapper.v(2): [PCDPC] - Port size (8) does not match connection size (32) for port 'counter'. The port definition is at: top/scripts/sva/hdlc_props.v(1).
-#         Region: /hdlc_tb/hdlc_props_sva_bind
-# ** Warning: (vsim-8684) No drivers exist on out port /hdlc_tb/DUT/RxChannel/RxData, and its initial value is not used.
-# Therefore, simulation behavior may occur that is not in compliance with
-# the VHDL standard as the initial values come from the base signal /hdlc_tb/DUT/RxD_D1.
-quit
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./sim_script.do PAUSED at line 9
+abort
+abort
 do sim_script.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# ** Warning: (vlib-34) Library already exists at "utility".
-# ** Warning: (vlib-34) Library already exists at "hdlc".
-# ** Warning: (vlib-34) Library already exists at "memlib".
-# QuestaSim vmap 10.3c_2 Lib Mapping Utility 2014.09 Sep 24 2014
-# vmap -modelsim_quiet work 
-# Reading /eda/tools/mentor/questasim.10.3c_2/questasim/linux/../modelsim.ini
-# "work" maps to directory ./work. (Default mapping)
-# QuestaSim vmap 10.3c_2 Lib Mapping Utility 2014.09 Sep 24 2014
-# vmap -modelsim_quiet utility 
-# Reading /eda/tools/mentor/questasim.10.3c_2/questasim/linux/../modelsim.ini
-# "utility" maps to directory ./utility. (Default mapping)
-# QuestaSim vmap 10.3c_2 Lib Mapping Utility 2014.09 Sep 24 2014
-# vmap -modelsim_quiet hdlc 
-# Reading /eda/tools/mentor/questasim.10.3c_2/questasim/linux/../modelsim.ini
-# "hdlc" maps to directory ./hdlc. (Default mapping)
-# QuestaSim vmap 10.3c_2 Lib Mapping Utility 2014.09 Sep 24 2014
-# vmap -modelsim_quiet memlib 
-# Reading /eda/tools/mentor/questasim.10.3c_2/questasim/linux/../modelsim.ini
-# "memlib" maps to directory ./memlib. (Default mapping)
 # QuestaSim vlog 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:41:07 on Apr 25,2016
+# Start time: 12:26:36 on Apr 25,2016
 # vlog -reportprogress 300 -sv top/scripts/sva/hdlc_props.v 
 # -- Compiling module hdlc_props
 # 
 # Top level modules:
 # 	hdlc_props
-# End time: 11:41:07 on Apr 25,2016, Elapsed time: 0:00:00
+# End time: 12:26:36 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim vlog 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:41:07 on Apr 25,2016
+# Start time: 12:26:36 on Apr 25,2016
 # vlog -reportprogress 300 -sv top/scripts/sva/sva_wrapper.v 
 # -- Compiling module sva_wrapper
 # 
 # Top level modules:
 # 	sva_wrapper
-# End time: 11:41:08 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:26:37 on Apr 25,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim 
-# Start time: 11:41:12 on Apr 25,2016
+# Start time: 12:26:37 on Apr 25,2016
 # ** Note: (vsim-8009) Loading existing optimized design _opt1
 # Loading std.standard
 # Loading verilog.vl_resolve(body)
@@ -469,46 +424,26 @@ do sim_script.do
 # ** Warning: Data byte 1 missmatch
 #    Time: 318610 ns  Iteration: 1  Instance: /hdlc_tb
 do sim_script.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# ** Warning: (vlib-34) Library already exists at "utility".
-# ** Warning: (vlib-34) Library already exists at "hdlc".
-# ** Warning: (vlib-34) Library already exists at "memlib".
-# QuestaSim vmap 10.3c_2 Lib Mapping Utility 2014.09 Sep 24 2014
-# vmap -modelsim_quiet work 
-# Reading /eda/tools/mentor/questasim.10.3c_2/questasim/linux/../modelsim.ini
-# "work" maps to directory ./work. (Default mapping)
-# QuestaSim vmap 10.3c_2 Lib Mapping Utility 2014.09 Sep 24 2014
-# vmap -modelsim_quiet utility 
-# Reading /eda/tools/mentor/questasim.10.3c_2/questasim/linux/../modelsim.ini
-# "utility" maps to directory ./utility. (Default mapping)
-# QuestaSim vmap 10.3c_2 Lib Mapping Utility 2014.09 Sep 24 2014
-# vmap -modelsim_quiet hdlc 
-# Reading /eda/tools/mentor/questasim.10.3c_2/questasim/linux/../modelsim.ini
-# "hdlc" maps to directory ./hdlc. (Default mapping)
-# QuestaSim vmap 10.3c_2 Lib Mapping Utility 2014.09 Sep 24 2014
-# vmap -modelsim_quiet memlib 
-# Reading /eda/tools/mentor/questasim.10.3c_2/questasim/linux/../modelsim.ini
-# "memlib" maps to directory ./memlib. (Default mapping)
 # QuestaSim vlog 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:41:53 on Apr 25,2016
+# Start time: 12:28:06 on Apr 25,2016
 # vlog -reportprogress 300 -sv top/scripts/sva/hdlc_props.v 
 # -- Compiling module hdlc_props
 # 
 # Top level modules:
 # 	hdlc_props
-# End time: 11:41:54 on Apr 25,2016, Elapsed time: 0:00:01
+# End time: 12:28:07 on Apr 25,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim vlog 10.3c_2 Compiler 2014.09 Sep 24 2014
-# Start time: 11:41:54 on Apr 25,2016
+# Start time: 12:28:07 on Apr 25,2016
 # vlog -reportprogress 300 -sv top/scripts/sva/sva_wrapper.v 
 # -- Compiling module sva_wrapper
 # 
 # Top level modules:
 # 	sva_wrapper
-# End time: 11:41:54 on Apr 25,2016, Elapsed time: 0:00:00
+# End time: 12:28:07 on Apr 25,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim 
-# Start time: 11:41:58 on Apr 25,2016
+# Start time: 12:28:09 on Apr 25,2016
 # ** Note: (vsim-8009) Loading existing optimized design _opt1
 # Loading std.standard
 # Loading verilog.vl_resolve(body)

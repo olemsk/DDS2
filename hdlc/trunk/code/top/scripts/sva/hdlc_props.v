@@ -23,14 +23,24 @@ sequence framestartRx;
 	!rx ##1 rx [*6] ##1 !rx;
 endsequence
 
+sequence abortpatternTx;
+	tx[*7] ##1 !tx;
+endsequence
+
+sequence abortpatternRx;
+	rx[*7] ##1 !rx;
+endsequence
+
 // property definition
 
   // Tx assertions
 property TxEnable;
-	@(posedge txclk) $rose(frame) |-> ##2 framestartTx; // and frame and !abortframe
+	@(posedge txclk) $rose(frame) and !abortframe |-> ##2 framestartTx; // and frame
 endproperty
 
-
+property generated_abortpattern;
+	@(posedge txclk)
+endproperty
 
 //property TxDone_check;
 //	@(posedge txclk) txdone implies //4.5 avsnitt checks
