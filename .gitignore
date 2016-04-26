@@ -1,5 +1,9 @@
 # Temp files?
 *~
+*.qdb
+*.qtl
+*.qpg
+*.bak
 
 # Object files
 *.o

@@ -1,0 +1,3 @@
+../code/top/tb/hdlc_tb.vhd
+top/scripts/sva/hdlc_props.sv
+top/scripts/sva/sva_wrapper.v
