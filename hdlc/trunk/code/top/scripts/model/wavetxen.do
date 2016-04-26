@@ -12,8 +12,9 @@ add wave -noupdate /hdlc_tb/DUT/TxCore/BackendEnable_i
 add wave -noupdate /hdlc_tb/DUT/TxCore/AbortTrans_i
 add wave -noupdate /hdlc_tb/DUT/TxCore/abortedTrans_i
 add wave -noupdate /hdlc_tb/DUT/Tx_WriteByte_D1
+add wave -noupdate /hdlc_tb/Rx
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {99997356 ns} 0}
+WaveRestoreCursors {{Cursor 1} {99997251 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 269
 configure wave -valuecolwidth 112
