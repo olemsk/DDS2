@@ -1,4 +1,4 @@
-module hdlc_props(txclk,rxclk,tx,rx,txen,rxen, txdone,dat_o,ack_o,clk_i,counter,abortframe,validframe,frame,flagdetect,rxabortframe,shiftreg,abort,rxd,databuff);
+module hdlc_props(txclk,rxclk,tx,rx,txen,rxen, txdone,dat_o,ack_o,clk_i,counter,abortframe,validframe,frame,flagdetect,rxabortframe,shiftreg,abort,rxd,databuff,data_out,wr,cs);
 input logic clk_i;
 input logic txclk;
 input logic rxclk;
@@ -19,6 +19,9 @@ input logic [7:0]shiftreg;
 input logic abort;
 input logic [7:0]rxd;
 input logic [7:0]databuff;
+input logic cs;
+input logic wr;
+input logic [7:0] data_out;
 // sequence definition
 sequence framestartTx;
     !tx ##1 tx[*6] ##1 !tx;
@@ -28,7 +31,7 @@ sequence framestartRx;
     !rx ##1 rx [*6] ##1 !rx;
 endsequence
  
-sequence abortpatternTx;wa
+sequence abortpatternTx;
     tx[*7] ##1 !tx;
 endsequence
  
@@ -60,12 +63,16 @@ property detectFlag;
     @(posedge rxclk) shiftreg == 8'b01111110 |-> ##1 flagdetect;
 endproperty
 
+
 property abortFrame;
     @(posedge rxclk) abort |-> ##1 rxabortframe;
-endpropertyÂ
+endproperty
 
-property dataBuff;
-    @(posedge clk_i)
+
+
+property writeenable;
+    @(posedge clk_i) $fell(wr) |-> ##1 data_out == 8'b11111111; 
+endproperty
 
 
 //property TxDone_check;
@@ -125,6 +132,10 @@ else $display($time,,,"\tdetectFlag FAIL:: flagDetect=%b  ShiftReg=%b  \n", flag
 assert_abortFrame: assert property (abortFrame)
     $display($time,,,"\tdetectFlag PASS:: abort=%b  abortFrame=%b  \n", abort, rxabortframe);
 else $display($time,,,"\tdetectFlag FAIL:: abort=%b  abortFrame=%b  \n", abort, rxabortframe);
+
+assert_lemon: assert property (writeenable)
+    $display($time,,,"\tWrite enable PASS:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
+else $display($time,,,"\tWrite enbale FAIL:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
 
 //cover statement
 // Reuse below with a sequence with formal parameters

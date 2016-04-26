@@ -19,6 +19,9 @@ module sva_wrapper;
 		.shiftreg(DUT.RxChannel.flag_detect.ShiftReg),
 		.abort(DUT.RxChannel.Controller.Abort),
 		.databuff(DUT.RxBuff.DataBuff),
-		.rxd(DUT.RxFCS.RxD)
+		.rxd(DUT.RxFCS.RxD),
+		.data_out(DUT.RxBuff.Buff.data_out),
+		.wr(DUT.RxBuff.Buff.WR),
+		.cs(DUT.RxBuff.Buff.cs)
 );
 endmodule
