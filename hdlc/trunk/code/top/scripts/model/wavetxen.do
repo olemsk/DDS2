@@ -7,10 +7,15 @@ add wave -noupdate /hdlc_tb/DUT/TxCore/Frame_i
 add wave -noupdate /hdlc_tb/Tx
 add wave -noupdate /hdlc_tb/DUT/Tx_ValidFrame_D1
 add wave -noupdate /hdlc_tb/DUT/Tx_AbortFrame_D1
+add wave -noupdate /hdlc_tb/DUT/TxCore/inProgress_i
+add wave -noupdate /hdlc_tb/DUT/TxCore/BackendEnable_i
+add wave -noupdate /hdlc_tb/DUT/TxCore/AbortTrans_i
+add wave -noupdate /hdlc_tb/DUT/TxCore/abortedTrans_i
+add wave -noupdate /hdlc_tb/DUT/Tx_WriteByte_D1
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {23303303 ns} 0}
+WaveRestoreCursors {{Cursor 1} {99997356 ns} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 224
+configure wave -namecolwidth 269
 configure wave -valuecolwidth 112
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
@@ -24,4 +29,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {23291307 ns} {23600558 ns}
+WaveRestoreZoom {99996738 ns} {100000172 ns}

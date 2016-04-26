@@ -2,6 +2,7 @@
 # to start Questasim, then run this script by: do sim_script.do
 
 # NOTE: Adding comments after a command fucks shit up!
+# NOTE: Run the script again if it returns error first time.
 
 # Compile
 vlog -sv top/scripts/sva/hdlc_props.v

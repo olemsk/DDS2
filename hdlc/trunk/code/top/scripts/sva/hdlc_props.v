@@ -1,4 +1,5 @@
 module hdlc_props(txclk,rxclk,tx,rx,txen,rxen, txdone, dat_o, ack_o, clk_i, counter, abortframe, validframe, frame);
+
 input logic clk_i;
 input logic txclk;
 input logic rxclk;
@@ -34,26 +35,39 @@ endsequence
 // property definition
 
   // Tx assertions
-property TxEnable;
+property generated_startframe; // Legge til and validframe?
 	@(posedge txclk) $rose(frame) and !abortframe and txen |-> ##2 framestartTx; // and frame
 endproperty
 
 property generated_abortpattern;
-	@(posedge txclk) @rose(abortframe) and txen |-> ##1 abortpatternTx;
+	@(posedge txclk) $rose(abortframe) and txen |-> ##2 abortpatternTx;
 endproperty
 
-property generated_end_of_frame_pattern;
-	@(posedge txclk) @fell(frame) and txen |-> 
+property generated_endframe;
+	@(posedge txclk) $fell(frame) and txen |-> ##2 framestartTx;
 endproperty
+
+/*
+property abortedtrans_check;
+	@(posedge txclk)
+endproperty
+
+property ready_check; // Can accept new data
+	@(posedge txclk)
+endproperty
+
+property write_byte;
+	@(posedge txclk)
+endproperty
+*/
 
 //property TxDone_check;
 //	@(posedge txclk) txdone implies //4.5 avsnitt checks
 //endproperty
 
+  // Rx assertions
 
-//property check1;
-  //@(posedge clk) reset implies state_s == IDLE;
-//endproperty
+
 
 
 
@@ -76,9 +90,13 @@ endproperty
 // assert, assume statement
  // Tx assertions
 
-assert_txenable: assert property (TxEnable)
-	$display($time,,,"\tTxEnable PASS:: TxEN=%b  AbortFrame=%b Frame=%b  \n", txen, abortframe, frame);
-else $display($time,,,"\tTxEnable FAIL:: TxEN=%b  AbortFrame=%b Frame=%b  \n", txen, abortframe, frame);
+assert_generated_startframe: assert property (generated_startframe)
+	$display($time,,,"\tGenerated startframe PASS:: TxEN=%b  AbortFrame=%b Frame=%b  \n", txen, abortframe, frame);
+else $display($time,,,"\tGenerated startframe FAIL:: TxEN=%b  AbortFrame=%b Frame=%b  \n", txen, abortframe, frame);
+
+assert_generated_endframe: assert property (generated_endframe)
+	$display($time,,,"\tGenerated endframe PASS:: TxEN=%b  AbortFrame=%b Frame=%b  \n", txen, abortframe, frame);
+else $display($time,,,"\tGenerated endframe FAIL:: TxEN=%b  AbortFrame=%b Frame=%b  \n", txen, abortframe, frame);
 
 //assert_byte1: assert property (byte1_check)
 //	$display($time,,,"\tByte 1 PASS:: DAT_O=%b  ACK_O=%b  \n", dat_o,$rose(ack_o));
