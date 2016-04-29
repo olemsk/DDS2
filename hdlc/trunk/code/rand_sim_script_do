@@ -1,4 +1,4 @@
-# Type: vsim -novopt -do top/scripts/model/build_hdlc_top.do
+# Type: vsim -novopt -do top/scripts/model/build_rand_hdlc_top.do
 # to start Questasim, then run this script by: do sim_script.do
 
 # NOTE: Adding comments after a command fucks shit up!
@@ -6,11 +6,11 @@
 
 # Compile
 vlog -sv top/scripts/sva/hdlc_props.v
-vlog -sv top/scripts/sva/sva_wrapper.v
+vlog -sv top/scripts/sva/hdlc_rand_tb.v
 
 # Run
-vsim -c work.hdlc_tb work.sva_wrapper
+vsim -c work.hdlc_ent work.hdlc_rand_tb
 
 # Change wave file and runtime if desired
-do top/scripts/model/wavetxen.do
-run 100ms
+#do top/scripts/model/wavetxen.do
+#run 100ms
