@@ -435,3 +435,5 @@ do sim_script.do
 # 
 # ** Warning: Data byte 1 missmatch
 #    Time: 318610 ns  Iteration: 1  Instance: /hdlc_tb
+# End time: 13:00:23 on Apr 29,2016, Elapsed time: 2:22:46
+# Errors: 2, Warnings: 7
