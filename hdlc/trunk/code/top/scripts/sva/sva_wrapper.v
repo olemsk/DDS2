@@ -22,6 +22,10 @@ module sva_wrapper;
 		.rxd(DUT.RxFCS.RxD),
 		.data_out(DUT.RxBuff.Buff.data_out),
 		.wr(DUT.RxBuff.Buff.WR),
-		.cs(DUT.RxBuff.Buff.cs)
+		.cs(DUT.RxBuff.Buff.cs),
+		.add(DUT.RxBuff.Buff.add),
+		.data_in(DUT.RxBuff.Buff.data_in)
 );
+
+
 endmodule

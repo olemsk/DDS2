@@ -1,4 +1,4 @@
-module hdlc_props(txclk,rxclk,tx,rx,txen,rxen, txdone,dat_o,ack_o,clk_i,counter,abortframe,validframe,frame,flagdetect,rxabortframe,shiftreg,abort,rxd,databuff,data_out,wr,cs);
+module hdlc_props(txclk,rxclk,tx,rx,txen,rxen, txdone,dat_o,ack_o,clk_i,counter,abortframe,validframe,frame,flagdetect,rxabortframe,shiftreg,abort,rxd,databuff,data_out,wr,cs,add,data_in);
 input logic clk_i;
 input logic txclk;
 input logic rxclk;
@@ -9,7 +9,7 @@ input logic rxen;
 input logic txdone;
 input logic ack_o;
 input logic [31:0]dat_o;
-input logic [7:0]counter;
+input logic [31:0]counter;
 input logic abortframe;
 input logic validframe;
 input logic frame;
@@ -22,6 +22,8 @@ input logic [7:0]databuff;
 input logic cs;
 input logic wr;
 input logic [7:0] data_out;
+input logic [7:0]data_in;
+input logic [6:0] add;
 // sequence definition
 sequence framestartTx;
     !tx ##1 tx[*6] ##1 !tx;
@@ -74,6 +76,9 @@ property writeenable;
     @(posedge clk_i) $fell(wr) |-> ##1 data_out == 8'b11111111; 
 endproperty
 
+property setDataOut;
+    @(posedge clk_i) disable iff ($isunknown(data_out)) cs and !wr |-> ##2 (data_out == data_in+1);
+endproperty
 
 //property TxDone_check;
 	//@(posedge txclk) txdone implies //4.5 avsnitt checks
@@ -133,9 +138,13 @@ assert_abortFrame: assert property (abortFrame)
     $display($time,,,"\tdetectFlag PASS:: abort=%b  abortFrame=%b  \n", abort, rxabortframe);
 else $display($time,,,"\tdetectFlag FAIL:: abort=%b  abortFrame=%b  \n", abort, rxabortframe);
 
-assert_lemon: assert property (writeenable)
-    $display($time,,,"\tWrite enable PASS:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
-else $display($time,,,"\tWrite enbale FAIL:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
+assert_lemon: assert property (writeenable);
+//    $display($time,,,"\tWrite enable PASS:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
+//else $display($time,,,"\tWrite enbale FAIL:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
+
+assert_datain_dataout: assert property (setDataOut)
+    $display($time,,,"\tSet Data Out PASS:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
+else $display($time,,,"\tSet Data Out FAIL:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
 
 //cover statement
 // Reuse below with a sequence with formal parameters
