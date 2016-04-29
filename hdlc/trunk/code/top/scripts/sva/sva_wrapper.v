@@ -24,7 +24,11 @@ module sva_wrapper;
 		.wr(DUT.RxBuff.Buff.WR),
 		.cs(DUT.RxBuff.Buff.cs),
 		.add(DUT.RxBuff.Buff.add),
-		.data_in(DUT.RxBuff.Buff.data_in)
+		.data_in(DUT.RxBuff.Buff.data_in),
+		.readbyte(DUT.Rx_Readbyte_D1),
+		.zeroFlag(DUT.RxChannel.zero_backend.flag),
+		.enableZeroFlag(DUT.RxChannel.enable_i),
+		.aval(DUT.RxChannel.zero_backend.aval)
 );
 
 

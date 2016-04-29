@@ -1,4 +1,4 @@
-module hdlc_props(txclk,rxclk,tx,rx,txen,rxen, txdone,dat_o,ack_o,clk_i,counter,abortframe,validframe,frame,flagdetect,rxabortframe,shiftreg,abort,rxd,databuff,data_out,wr,cs,add,data_in);
+module hdlc_props(txclk,rxclk,tx,rx,txen,rxen, txdone,dat_o,ack_o,clk_i,counter,abortframe,validframe,frame,flagdetect,rxabortframe,shiftreg,abort,rxd,databuff,data_out,wr,cs,add,data_in,aval,zeroFlag,enableZeroFlag,readbyte);
 input logic clk_i;
 input logic txclk;
 input logic rxclk;
@@ -24,6 +24,10 @@ input logic wr;
 input logic [7:0] data_out;
 input logic [7:0]data_in;
 input logic [6:0] add;
+input logic aval;
+input logic zeroFlag;
+input logic enableZeroFlag;
+input logic readbyte;
 // sequence definition
 sequence framestartTx;
     !tx ##1 tx[*6] ##1 !tx;
@@ -80,6 +84,14 @@ property setDataOut;
     @(posedge clk_i) disable iff ($isunknown(data_out)) cs and !wr |-> ##2 (data_out == data_in+1);
 endproperty
 
+property Aval;
+    @(posedge rxclk) !validframe or readbyte|-> ##1 aval;
+endproperty
+
+property notAval;
+    @(posedge rxclk) validframe and !readbyte and zeroFlag and enableZeroFlag |-> ##1 aval;
+endproperty
+
 //property TxDone_check;
 	//@(posedge txclk) txdone implies //4.5 avsnitt checks
 //endproperty
@@ -123,28 +135,36 @@ endproperty
 //else $display($time,,,"\tByte 4 FAIL:: DAT_O=%b	counter = %b \n",dat_o[31:24],$past(counter[7:0],3));
 
 assert_txenable: assert property (TxEnable)
-    $display($time,,,"\tTxEnable PASS:: TxEN=%b  AbortFrame=%b Frame=%b  \n", txen, abortframe, frame);
+   // $display($time,,,"\tTxEnable PASS:: TxEN=%b  AbortFrame=%b Frame=%b  \n", txen, abortframe, frame);
 else $display($time,,,"\tTxEnable FAIL:: TxEN=%b  AbortFrame=%b Frame=%b  \n", txen, abortframe, frame);
 
 assert_notabortwhenflag: assert property (notabortwhenflag)
-    $display($time,,,"\tNotAbort PASS:: flagDetect=%b  AbortFrame=%b  \n", flagdetect, rxabortframe);
+    //$display($time,,,"\tNotAbort PASS:: flagDetect=%b  AbortFrame=%b  \n", flagdetect, rxabortframe);
 else $display($time,,,"\tnotAbort FAIL:: flagDetect=%b  AbortFrame=%b  \n", flagdetect, rxabortframe);
 
 assert_detectflag: assert property (detectFlag)
-    $display($time,,,"\tdetectFlag PASS:: flagDetect=%b  ShiftReg=%b  \n", flagdetect, shiftreg);
+   // $display($time,,,"\tdetectFlag PASS:: flagDetect=%b  ShiftReg=%b  \n", flagdetect, shiftreg);
 else $display($time,,,"\tdetectFlag FAIL:: flagDetect=%b  ShiftReg=%b  \n", flagdetect, shiftreg);
 
 assert_abortFrame: assert property (abortFrame)
-    $display($time,,,"\tdetectFlag PASS:: abort=%b  abortFrame=%b  \n", abort, rxabortframe);
+    //$display($time,,,"\tdetectFlag PASS:: abort=%b  abortFrame=%b  \n", abort, rxabortframe);
 else $display($time,,,"\tdetectFlag FAIL:: abort=%b  abortFrame=%b  \n", abort, rxabortframe);
 
-assert_lemon: assert property (writeenable);
+assert_lemon: assert property (writeenable)
 //    $display($time,,,"\tWrite enable PASS:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
-//else $display($time,,,"\tWrite enbale FAIL:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
+else $display($time,,,"\tWrite enbale FAIL:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
 
 assert_datain_dataout: assert property (setDataOut)
-    $display($time,,,"\tSet Data Out PASS:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
+   // $display($time,,,"\tSet Data Out PASS:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
 else $display($time,,,"\tSet Data Out FAIL:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
+
+assert_aval: assert property (Aval)
+  //  $display($time,,,"\tAval PASS:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
+else $display($time,,,"\tAval FAIL:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
+
+assert_notaval: assert property (notAval)
+   // $display($time,,,"\tNOT Aval PASS:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
+else $display($time,,,"\tNOT Aval FAIL:: wr=%b  data_out=%b  \n", $past(wr), $past(data_out));
 
 //cover statement
 // Reuse below with a sequence with formal parameters

@@ -6,7 +6,7 @@
   <link rel="StyleSheet" media="screen" href="../css/hdl2html.css"/>
 </head>
 <body id="hdl2html">
-  <tt><a name="1"/><span style="color:red">%s%%s%%s%%s%%s%1%s%%s%</span><span class="keyword">module</span>%s%hdlc_props(txclk,rxclk,tx,rx,txen,rxen,%s%txdone,dat_o,ack_o,clk_i,counter,abortframe,validframe,frame,flagdetect,rxabortframe,shiftreg,abort);<br/>
+  <tt><a name="1"/><span style="color:red">%s%%s%%s%%s%%s%1%s%%s%</span><span class="keyword">module</span>%s%hdlc_props(txclk,rxclk,tx,rx,txen,rxen,%s%txdone,dat_o,ack_o,clk_i,counter,abortframe,validframe,frame,flagdetect,rxabortframe,shiftreg,abort,rxd,databuff,data_out,wr,cs,add,data_in);<br/>
 <a name="2"/><span style="color:red">%s%%s%%s%%s%%s%2%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%clk_i;<br/>
 <a name="3"/><span style="color:red">%s%%s%%s%%s%%s%3%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%txclk;<br/>
 <a name="4"/><span style="color:red">%s%%s%%s%%s%%s%4%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%rxclk;<br/>
@@ -17,7 +17,7 @@
 <a name="9"/><span style="color:red">%s%%s%%s%%s%%s%9%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%txdone;<br/>
 <a name="10"/><span style="color:red">%s%%s%%s%%s%10%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%ack_o;<br/>
 <a name="11"/><span style="color:red">%s%%s%%s%%s%11%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%[31:0]dat_o;<br/>
-<a name="12"/><span style="color:red">%s%%s%%s%%s%12%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%[7:0]counter;<br/>
+<a name="12"/><span style="color:red">%s%%s%%s%%s%12%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%[31:0]counter;<br/>
 <a name="13"/><span style="color:red">%s%%s%%s%%s%13%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%abortframe;<br/>
 <a name="14"/><span style="color:red">%s%%s%%s%%s%14%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%validframe;<br/>
 <a name="15"/><span style="color:red">%s%%s%%s%%s%15%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%frame;<br/>
@@ -25,122 +25,146 @@
 <a name="17"/><span style="color:red">%s%%s%%s%%s%17%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%rxabortframe;<br/>
 <a name="18"/><span style="color:red">%s%%s%%s%%s%18%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%[7:0]shiftreg;<br/>
 <a name="19"/><span style="color:red">%s%%s%%s%%s%19%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%abort;<br/>
-<a name="20"/><span style="color:red">%s%%s%%s%%s%20%s%%s%</span><br/>
-<a name="21"/><span style="color:red">%s%%s%%s%%s%21%s%%s%</span><span class="comment">//%s%sequence%s%definition</span><br/>
-<a name="22"/><span style="color:red">%s%%s%%s%%s%22%s%%s%</span><span class="keyword">sequence</span>%s%framestartTx;<br/>
-<a name="23"/><span style="color:red">%s%%s%%s%%s%23%s%%s%</span>%s%%s%%s%%s%!tx%s%##1%s%tx[*6]%s%##1%s%!tx;<br/>
-<a name="24"/><span style="color:red">%s%%s%%s%%s%24%s%%s%</span><span class="keyword">endsequence</span><br/>
-<a name="25"/><span style="color:red">%s%%s%%s%%s%25%s%%s%</span>%s%<br/>
-<a name="26"/><span style="color:red">%s%%s%%s%%s%26%s%%s%</span><span class="keyword">sequence</span>%s%framestartRx;<br/>
-<a name="27"/><span style="color:red">%s%%s%%s%%s%27%s%%s%</span>%s%%s%%s%%s%!rx%s%##1%s%rx%s%[*6]%s%##1%s%!rx;<br/>
-<a name="28"/><span style="color:red">%s%%s%%s%%s%28%s%%s%</span><span class="keyword">endsequence</span><br/>
-<a name="29"/><span style="color:red">%s%%s%%s%%s%29%s%%s%</span>%s%<br/>
-<a name="30"/><span style="color:red">%s%%s%%s%%s%30%s%%s%</span><span class="keyword">sequence</span>%s%abortpatternTx;<br/>
-<a name="31"/><span style="color:red">%s%%s%%s%%s%31%s%%s%</span>%s%%s%%s%%s%tx[*7]%s%##1%s%!tx;<br/>
-<a name="32"/><span style="color:red">%s%%s%%s%%s%32%s%%s%</span><span class="keyword">endsequence</span><br/>
-<a name="33"/><span style="color:red">%s%%s%%s%%s%33%s%%s%</span>%s%<br/>
-<a name="34"/><span style="color:red">%s%%s%%s%%s%34%s%%s%</span><span class="keyword">sequence</span>%s%abortpatternRx;<br/>
-<a name="35"/><span style="color:red">%s%%s%%s%%s%35%s%%s%</span>%s%%s%%s%%s%rx[*7]%s%##1%s%!rx;<br/>
-<a name="36"/><span style="color:red">%s%%s%%s%%s%36%s%%s%</span><span class="keyword">endsequence</span><br/>
-<a name="37"/><span style="color:red">%s%%s%%s%%s%37%s%%s%</span><br/>
-<a name="38"/><span style="color:red">%s%%s%%s%%s%38%s%%s%</span><span class="comment">//%s%property%s%definition</span><br/>
-<a name="39"/><span style="color:red">%s%%s%%s%%s%39%s%%s%</span><br/>
-<a name="40"/><span style="color:red">%s%%s%%s%%s%40%s%%s%</span>%s%<span class="comment">//%s%Tx%s%assertions</span><br/>
-<a name="41"/><span style="color:red">%s%%s%%s%%s%41%s%%s%</span><span class="keyword">property</span>%s%TxEnable;<br/>
-<a name="42"/><span style="color:red">%s%%s%%s%%s%42%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%txclk)%s%$rose(frame)%s%<span class="keytype">and</span>%s%!abortframe%s%<span class="keytype">and</span>%s%txen%s%|-&gt;%s%##2%s%framestartTx;%s%<span class="comment">//%s%and%s%frame</span><br/>
-<a name="43"/><span style="color:red">%s%%s%%s%%s%43%s%%s%</span><span class="keyword">endproperty</span><br/>
-<a name="44"/><span style="color:red">%s%%s%%s%%s%44%s%%s%</span>%s%<br/>
-<a name="45"/><span style="color:red">%s%%s%%s%%s%45%s%%s%</span><span class="keyword">property</span>%s%generated_abortpattern;<br/>
-<a name="46"/><span style="color:red">%s%%s%%s%%s%46%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%txclk)%s%$rose(abortframe)%s%<span class="keytype">and</span>%s%txen%s%|-&gt;%s%##1%s%abortpatternTx;<br/>
-<a name="47"/><span style="color:red">%s%%s%%s%%s%47%s%%s%</span><span class="keyword">endproperty</span><br/>
-<a name="48"/><span style="color:red">%s%%s%%s%%s%48%s%%s%</span>%s%<br/>
-<a name="49"/><span style="color:red">%s%%s%%s%%s%49%s%%s%</span><span class="keyword">property</span>%s%generated_end_of_frame_pattern;<br/>
-<a name="50"/><span style="color:red">%s%%s%%s%%s%50%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%txclk)%s%$<span class="keyvalu">fell</span>(frame)%s%<span class="keytype">and</span>%s%txen%s%|-&gt;%s%##1%s%framestartTx;<br/>
-<a name="51"/><span style="color:red">%s%%s%%s%%s%51%s%%s%</span><span class="keyword">endproperty</span><br/>
-<a name="52"/><span style="color:red">%s%%s%%s%%s%52%s%%s%</span><br/>
-<a name="53"/><span style="color:red">%s%%s%%s%%s%53%s%%s%</span><span class="comment">//%s%Rx%s%assertions</span><br/>
-<a name="54"/><span style="color:red">%s%%s%%s%%s%54%s%%s%</span><span class="keyword">property</span>%s%notabortwhenflag;<br/>
-<a name="55"/><span style="color:red">%s%%s%%s%%s%55%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%rxclk)%s%flagdetect%s%|-&gt;%s%##1%s%!rxabortframe;<br/>
-<a name="56"/><span style="color:red">%s%%s%%s%%s%56%s%%s%</span><span class="keyword">endproperty</span>%s%%s%<br/>
-<a name="57"/><span style="color:red">%s%%s%%s%%s%57%s%%s%</span><br/>
-<a name="58"/><span style="color:red">%s%%s%%s%%s%58%s%%s%</span><span class="keyword">property</span>%s%detectFlag;<br/>
-<a name="59"/><span style="color:red">%s%%s%%s%%s%59%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%rxclk)%s%shiftreg%s%==%s%8'b01111110%s%|-&gt;%s%##1%s%flagdetect;<br/>
-<a name="60"/><span style="color:red">%s%%s%%s%%s%60%s%%s%</span><span class="keyword">endproperty</span><br/>
-<a name="61"/><span style="color:red">%s%%s%%s%%s%61%s%%s%</span><br/>
-<a name="62"/><span style="color:red">%s%%s%%s%%s%62%s%%s%</span><span class="keyword">property</span>%s%abortFrame;<br/>
-<a name="63"/><span style="color:red">%s%%s%%s%%s%63%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%rxclk)%s%abort%s%|-&gt;%s%##1%s%rxabortframe;<br/>
-<a name="64"/><span style="color:red">%s%%s%%s%%s%64%s%%s%</span><span class="keyword">endproperty</span><br/>
-<a name="65"/><span style="color:red">%s%%s%%s%%s%65%s%%s%</span><br/>
-<a name="66"/><span style="color:red">%s%%s%%s%%s%66%s%%s%</span><br/>
-<a name="67"/><span style="color:red">%s%%s%%s%%s%67%s%%s%</span><span class="comment">//property%s%TxDone_check;</span><br/>
-<a name="68"/><span style="color:red">%s%%s%%s%%s%68%s%%s%</span>%t%<span class="comment">//@(posedge%s%txclk)%s%txdone%s%implies%s%//4.5%s%avsnitt%s%checks</span><br/>
-<a name="69"/><span style="color:red">%s%%s%%s%%s%69%s%%s%</span><span class="comment">//endproperty</span><br/>
-<a name="70"/><span style="color:red">%s%%s%%s%%s%70%s%%s%</span><br/>
-<a name="71"/><span style="color:red">%s%%s%%s%%s%71%s%%s%</span><br/>
-<a name="72"/><span style="color:red">%s%%s%%s%%s%72%s%%s%</span><span class="comment">//property%s%check1;</span><br/>
-<a name="73"/><span style="color:red">%s%%s%%s%%s%73%s%%s%</span>%s%%s%<span class="comment">//@(posedge%s%clk)%s%reset%s%implies%s%state_s%s%==%s%IDLE;</span><br/>
-<a name="74"/><span style="color:red">%s%%s%%s%%s%74%s%%s%</span><span class="comment">//endproperty</span><br/>
-<a name="75"/><span style="color:red">%s%%s%%s%%s%75%s%%s%</span><br/>
-<a name="76"/><span style="color:red">%s%%s%%s%%s%76%s%%s%</span><span class="keyword">property</span>%s%byte1_check;<br/>
-<a name="77"/><span style="color:red">%s%%s%%s%%s%77%s%%s%</span>@(<span class="keyattr">posedge</span>%s%clk_i)%s%$rose(ack_o)%s%|-&gt;%s%##1%s%dat_o[7:0]%s%==%s%counter;<br/>
-<a name="78"/><span style="color:red">%s%%s%%s%%s%78%s%%s%</span><span class="keyword">endproperty</span><br/>
-<a name="79"/><span style="color:red">%s%%s%%s%%s%79%s%%s%</span><br/>
-<a name="80"/><span style="color:red">%s%%s%%s%%s%80%s%%s%</span><span class="keyword">property</span>%s%byte2_check;<br/>
-<a name="81"/><span style="color:red">%s%%s%%s%%s%81%s%%s%</span>@(<span class="keyattr">posedge</span>%s%clk_i)%s%$rose(ack_o)%s%|-&gt;%s%##2%s%dat_o[15:8]%s%==%s%counter;<br/>
-<a name="82"/><span style="color:red">%s%%s%%s%%s%82%s%%s%</span><span class="keyword">endproperty</span><br/>
-<a name="83"/><span style="color:red">%s%%s%%s%%s%83%s%%s%</span><span class="comment">//constrained%s%randomization%s%and%s%coverage%s%points</span><br/>
-<a name="84"/><span style="color:red">%s%%s%%s%%s%84%s%%s%</span><span class="keyword">property</span>%s%byte3_check;<br/>
-<a name="85"/><span style="color:red">%s%%s%%s%%s%85%s%%s%</span>@(<span class="keyattr">posedge</span>%s%clk_i)%s%$rose(ack_o)%s%|-&gt;%s%##3%s%dat_o[23:16]%s%==%s%counter;<br/>
-<a name="86"/><span style="color:red">%s%%s%%s%%s%86%s%%s%</span><span class="keyword">endproperty</span><br/>
+<a name="20"/><span style="color:red">%s%%s%%s%%s%20%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%[7:0]rxd;<br/>
+<a name="21"/><span style="color:red">%s%%s%%s%%s%21%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%[7:0]databuff;<br/>
+<a name="22"/><span style="color:red">%s%%s%%s%%s%22%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%cs;<br/>
+<a name="23"/><span style="color:red">%s%%s%%s%%s%23%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%wr;<br/>
+<a name="24"/><span style="color:red">%s%%s%%s%%s%24%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%[7:0]%s%data_out;<br/>
+<a name="25"/><span style="color:red">%s%%s%%s%%s%25%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%[7:0]data_in;<br/>
+<a name="26"/><span style="color:red">%s%%s%%s%%s%26%s%%s%</span><span class="keyword">input</span>%s%<span class="keyword">logic</span>%s%[6:0]%s%add;<br/>
+<a name="27"/><span style="color:red">%s%%s%%s%%s%27%s%%s%</span><span class="comment">//%s%sequence%s%definition</span><br/>
+<a name="28"/><span style="color:red">%s%%s%%s%%s%28%s%%s%</span><span class="keyword">sequence</span>%s%framestartTx;<br/>
+<a name="29"/><span style="color:red">%s%%s%%s%%s%29%s%%s%</span>%s%%s%%s%%s%!tx%s%##1%s%tx[*6]%s%##1%s%!tx;<br/>
+<a name="30"/><span style="color:red">%s%%s%%s%%s%30%s%%s%</span><span class="keyword">endsequence</span><br/>
+<a name="31"/><span style="color:red">%s%%s%%s%%s%31%s%%s%</span>%s%<br/>
+<a name="32"/><span style="color:red">%s%%s%%s%%s%32%s%%s%</span><span class="keyword">sequence</span>%s%framestartRx;<br/>
+<a name="33"/><span style="color:red">%s%%s%%s%%s%33%s%%s%</span>%s%%s%%s%%s%!rx%s%##1%s%rx%s%[*6]%s%##1%s%!rx;<br/>
+<a name="34"/><span style="color:red">%s%%s%%s%%s%34%s%%s%</span><span class="keyword">endsequence</span><br/>
+<a name="35"/><span style="color:red">%s%%s%%s%%s%35%s%%s%</span>%s%<br/>
+<a name="36"/><span style="color:red">%s%%s%%s%%s%36%s%%s%</span><span class="keyword">sequence</span>%s%abortpatternTx;<br/>
+<a name="37"/><span style="color:red">%s%%s%%s%%s%37%s%%s%</span>%s%%s%%s%%s%tx[*7]%s%##1%s%!tx;<br/>
+<a name="38"/><span style="color:red">%s%%s%%s%%s%38%s%%s%</span><span class="keyword">endsequence</span><br/>
+<a name="39"/><span style="color:red">%s%%s%%s%%s%39%s%%s%</span>%s%<br/>
+<a name="40"/><span style="color:red">%s%%s%%s%%s%40%s%%s%</span><span class="keyword">sequence</span>%s%abortpatternRx;<br/>
+<a name="41"/><span style="color:red">%s%%s%%s%%s%41%s%%s%</span>%s%%s%%s%%s%rx[*7]%s%##1%s%!rx;<br/>
+<a name="42"/><span style="color:red">%s%%s%%s%%s%42%s%%s%</span><span class="keyword">endsequence</span><br/>
+<a name="43"/><span style="color:red">%s%%s%%s%%s%43%s%%s%</span><br/>
+<a name="44"/><span style="color:red">%s%%s%%s%%s%44%s%%s%</span><span class="comment">//%s%property%s%definition</span><br/>
+<a name="45"/><span style="color:red">%s%%s%%s%%s%45%s%%s%</span><br/>
+<a name="46"/><span style="color:red">%s%%s%%s%%s%46%s%%s%</span>%s%<span class="comment">//%s%Tx%s%assertions</span><br/>
+<a name="47"/><span style="color:red">%s%%s%%s%%s%47%s%%s%</span><span class="keyword">property</span>%s%TxEnable;<br/>
+<a name="48"/><span style="color:red">%s%%s%%s%%s%48%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%txclk)%s%$rose(frame)%s%<span class="keytype">and</span>%s%!abortframe%s%<span class="keytype">and</span>%s%txen%s%|-&gt;%s%##2%s%framestartTx;%s%<span class="comment">//%s%and%s%frame</span><br/>
+<a name="49"/><span style="color:red">%s%%s%%s%%s%49%s%%s%</span><span class="keyword">endproperty</span><br/>
+<a name="50"/><span style="color:red">%s%%s%%s%%s%50%s%%s%</span>%s%<br/>
+<a name="51"/><span style="color:red">%s%%s%%s%%s%51%s%%s%</span><span class="keyword">property</span>%s%generated_abortpattern;<br/>
+<a name="52"/><span style="color:red">%s%%s%%s%%s%52%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%txclk)%s%$rose(abortframe)%s%<span class="keytype">and</span>%s%txen%s%|-&gt;%s%##1%s%abortpatternTx;<br/>
+<a name="53"/><span style="color:red">%s%%s%%s%%s%53%s%%s%</span><span class="keyword">endproperty</span><br/>
+<a name="54"/><span style="color:red">%s%%s%%s%%s%54%s%%s%</span>%s%<br/>
+<a name="55"/><span style="color:red">%s%%s%%s%%s%55%s%%s%</span><span class="keyword">property</span>%s%generated_end_of_frame_pattern;<br/>
+<a name="56"/><span style="color:red">%s%%s%%s%%s%56%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%txclk)%s%$<span class="keyvalu">fell</span>(frame)%s%<span class="keytype">and</span>%s%txen%s%|-&gt;%s%##1%s%framestartTx;<br/>
+<a name="57"/><span style="color:red">%s%%s%%s%%s%57%s%%s%</span><span class="keyword">endproperty</span><br/>
+<a name="58"/><span style="color:red">%s%%s%%s%%s%58%s%%s%</span><br/>
+<a name="59"/><span style="color:red">%s%%s%%s%%s%59%s%%s%</span><span class="comment">//%s%Rx%s%assertions</span><br/>
+<a name="60"/><span style="color:red">%s%%s%%s%%s%60%s%%s%</span><span class="keyword">property</span>%s%notabortwhenflag;<br/>
+<a name="61"/><span style="color:red">%s%%s%%s%%s%61%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%rxclk)%s%flagdetect%s%|-&gt;%s%##1%s%!rxabortframe;<br/>
+<a name="62"/><span style="color:red">%s%%s%%s%%s%62%s%%s%</span><span class="keyword">endproperty</span>%s%%s%<br/>
+<a name="63"/><span style="color:red">%s%%s%%s%%s%63%s%%s%</span><br/>
+<a name="64"/><span style="color:red">%s%%s%%s%%s%64%s%%s%</span><span class="keyword">property</span>%s%detectFlag;<br/>
+<a name="65"/><span style="color:red">%s%%s%%s%%s%65%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%rxclk)%s%shiftreg%s%==%s%8'b01111110%s%|-&gt;%s%##1%s%flagdetect;<br/>
+<a name="66"/><span style="color:red">%s%%s%%s%%s%66%s%%s%</span><span class="keyword">endproperty</span><br/>
+<a name="67"/><span style="color:red">%s%%s%%s%%s%67%s%%s%</span><br/>
+<a name="68"/><span style="color:red">%s%%s%%s%%s%68%s%%s%</span><br/>
+<a name="69"/><span style="color:red">%s%%s%%s%%s%69%s%%s%</span><span class="keyword">property</span>%s%abortFrame;<br/>
+<a name="70"/><span style="color:red">%s%%s%%s%%s%70%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%rxclk)%s%abort%s%|-&gt;%s%##1%s%rxabortframe;<br/>
+<a name="71"/><span style="color:red">%s%%s%%s%%s%71%s%%s%</span><span class="keyword">endproperty</span><br/>
+<a name="72"/><span style="color:red">%s%%s%%s%%s%72%s%%s%</span><br/>
+<a name="73"/><span style="color:red">%s%%s%%s%%s%73%s%%s%</span><br/>
+<a name="74"/><span style="color:red">%s%%s%%s%%s%74%s%%s%</span><br/>
+<a name="75"/><span style="color:red">%s%%s%%s%%s%75%s%%s%</span><span class="keyword">property</span>%s%writeenable;<br/>
+<a name="76"/><span style="color:red">%s%%s%%s%%s%76%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%clk_i)%s%$<span class="keyvalu">fell</span>(wr)%s%|-&gt;%s%##1%s%data_out%s%==%s%8'b11111111;%s%<br/>
+<a name="77"/><span style="color:red">%s%%s%%s%%s%77%s%%s%</span><span class="keyword">endproperty</span><br/>
+<a name="78"/><span style="color:red">%s%%s%%s%%s%78%s%%s%</span><br/>
+<a name="79"/><span style="color:red">%s%%s%%s%%s%79%s%%s%</span><span class="keyword">property</span>%s%setDataOut;<br/>
+<a name="80"/><span style="color:red">%s%%s%%s%%s%80%s%%s%</span>%s%%s%%s%%s%@(<span class="keyattr">posedge</span>%s%clk_i)%s%<span class="keyword">disable</span>%s%<span class="keyword">iff</span>%s%($<span class="keyvalu">isunknown</span>(data_out))%s%cs%s%<span class="keytype">and</span>%s%!wr%s%|-&gt;%s%##2%s%(data_out%s%==%s%data_in+1);<br/>
+<a name="81"/><span style="color:red">%s%%s%%s%%s%81%s%%s%</span><span class="keyword">endproperty</span><br/>
+<a name="82"/><span style="color:red">%s%%s%%s%%s%82%s%%s%</span><br/>
+<a name="83"/><span style="color:red">%s%%s%%s%%s%83%s%%s%</span><span class="comment">//property%s%TxDone_check;</span><br/>
+<a name="84"/><span style="color:red">%s%%s%%s%%s%84%s%%s%</span>%t%<span class="comment">//@(posedge%s%txclk)%s%txdone%s%implies%s%//4.5%s%avsnitt%s%checks</span><br/>
+<a name="85"/><span style="color:red">%s%%s%%s%%s%85%s%%s%</span><span class="comment">//endproperty</span><br/>
+<a name="86"/><span style="color:red">%s%%s%%s%%s%86%s%%s%</span><br/>
 <a name="87"/><span style="color:red">%s%%s%%s%%s%87%s%%s%</span><br/>
-<a name="88"/><span style="color:red">%s%%s%%s%%s%88%s%%s%</span><br/>
-<a name="89"/><span style="color:red">%s%%s%%s%%s%89%s%%s%</span><span class="keyword">property</span>%s%byte4_check;<br/>
-<a name="90"/><span style="color:red">%s%%s%%s%%s%90%s%%s%</span>@(<span class="keyattr">posedge</span>%s%clk_i)%s%$rose(ack_o)%s%|-&gt;%s%##4%s%dat_o[31:24]%s%==%s%counter;<br/>
-<a name="91"/><span style="color:red">%s%%s%%s%%s%91%s%%s%</span><span class="keyword">endproperty</span><br/>
-<a name="92"/><span style="color:red">%s%%s%%s%%s%92%s%%s%</span><br/>
-<a name="93"/><span style="color:red">%s%%s%%s%%s%93%s%%s%</span><span class="comment">//%s%assert,%s%assume%s%statement</span><br/>
-<a name="94"/><span style="color:red">%s%%s%%s%%s%94%s%%s%</span><span class="comment">//assert_byte1:%s%assert%s%property%s%(byte1_check);</span><br/>
-<a name="95"/><span style="color:red">%s%%s%%s%%s%95%s%%s%</span>%t%<span class="comment">//$display($time,,,"\tByte%s%1%s%PASS::%s%DAT_O=%b%s%%s%counter=%b%s%%s%\n",%s%dat_o[7:0],counter[7:0]);</span><br/>
-<a name="96"/><span style="color:red">%s%%s%%s%%s%96%s%%s%</span><span class="comment">//else%s%$display($time,,,"\tByte%s%1%s%FAIL::%s%DAT_O=%b%s%%s%counter=%b%s%\n",%s%dat_o[7:0],counter[7:0]);</span><br/>
-<a name="97"/><span style="color:red">%s%%s%%s%%s%97%s%%s%</span><br/>
-<a name="98"/><span style="color:red">%s%%s%%s%%s%98%s%%s%</span><span class="comment">//assert_byte2:%s%assert%s%property%s%(byte2_check);</span><br/>
-<a name="99"/><span style="color:red">%s%%s%%s%%s%99%s%%s%</span>%t%<span class="comment">//$display($time,,,"\tByte%s%2%s%PASS::%s%DAT_O=%b%s%%s%counter=%b%s%%s%\n",%s%dat_o[15:8],$past(counter[7:0]));</span><br/>
-<a name="100"/><span style="color:red">%s%%s%%s%100%s%%s%</span><span class="comment">//else%s%$display($time,,,"\tByte%s%2%s%FAIL::%s%DAT_O=%b%s%%s%counter=%b%s%\n",%s%dat_o[15:8],$past(counter[7:0]));</span><br/>
-<a name="101"/><span style="color:red">%s%%s%%s%101%s%%s%</span><br/>
-<a name="102"/><span style="color:red">%s%%s%%s%102%s%%s%</span><span class="comment">//assert_byte3:%s%assert%s%property%s%(byte3_check);</span><br/>
-<a name="103"/><span style="color:red">%s%%s%%s%103%s%%s%</span>%t%<span class="comment">//$display($time,,,"\tByte%s%3%s%PASS::%s%DAT_O=%b%t%counter=%b%t%\n",%s%dat_o[23:16],$past(counter[7:0],2));</span><br/>
-<a name="104"/><span style="color:red">%s%%s%%s%104%s%%s%</span>%s%<span class="comment">//else%s%$display($time,,,"\tByte%s%3%s%FAIL::%s%DAT_O=%b%s%%s%counter=%b%s%\n",%s%dat_o[23:16],$past(counter[7:0],2));</span><br/>
-<a name="105"/><span style="color:red">%s%%s%%s%105%s%%s%</span><span class="comment">//assert_byte4:%s%assert%s%property%s%(byte4_check);</span><br/>
-<a name="106"/><span style="color:red">%s%%s%%s%106%s%%s%</span><span class="comment">//%t%$display($time,,,"\tByte%s%4%s%PASS::%s%DAT_O=%b%t%counter=%b%t%\n",%s%dat_o[31:24],$past(counter[7:0],3));</span><br/>
-<a name="107"/><span style="color:red">%s%%s%%s%107%s%%s%</span><span class="comment">//else%s%$display($time,,,"\tByte%s%4%s%FAIL::%s%DAT_O=%b%t%counter%s%=%s%%b%s%\n",dat_o[31:24],$past(counter[7:0],3));</span><br/>
+<a name="88"/><span style="color:red">%s%%s%%s%%s%88%s%%s%</span><span class="comment">//property%s%check1;</span><br/>
+<a name="89"/><span style="color:red">%s%%s%%s%%s%89%s%%s%</span>%s%%s%<span class="comment">//@(posedge%s%clk)%s%reset%s%implies%s%state_s%s%==%s%IDLE;</span><br/>
+<a name="90"/><span style="color:red">%s%%s%%s%%s%90%s%%s%</span><span class="comment">//endproperty</span><br/>
+<a name="91"/><span style="color:red">%s%%s%%s%%s%91%s%%s%</span><br/>
+<a name="92"/><span style="color:red">%s%%s%%s%%s%92%s%%s%</span><span class="keyword">property</span>%s%byte1_check;<br/>
+<a name="93"/><span style="color:red">%s%%s%%s%%s%93%s%%s%</span>@(<span class="keyattr">posedge</span>%s%clk_i)%s%$rose(ack_o)%s%|-&gt;%s%##1%s%dat_o[7:0]%s%==%s%counter;<br/>
+<a name="94"/><span style="color:red">%s%%s%%s%%s%94%s%%s%</span><span class="keyword">endproperty</span><br/>
+<a name="95"/><span style="color:red">%s%%s%%s%%s%95%s%%s%</span><br/>
+<a name="96"/><span style="color:red">%s%%s%%s%%s%96%s%%s%</span><span class="keyword">property</span>%s%byte2_check;<br/>
+<a name="97"/><span style="color:red">%s%%s%%s%%s%97%s%%s%</span>@(<span class="keyattr">posedge</span>%s%clk_i)%s%$rose(ack_o)%s%|-&gt;%s%##2%s%dat_o[15:8]%s%==%s%counter;<br/>
+<a name="98"/><span style="color:red">%s%%s%%s%%s%98%s%%s%</span><span class="keyword">endproperty</span><br/>
+<a name="99"/><span style="color:red">%s%%s%%s%%s%99%s%%s%</span><span class="comment">//constrained%s%randomization%s%and%s%coverage%s%points</span><br/>
+<a name="100"/><span style="color:red">%s%%s%%s%100%s%%s%</span><span class="keyword">property</span>%s%byte3_check;<br/>
+<a name="101"/><span style="color:red">%s%%s%%s%101%s%%s%</span>@(<span class="keyattr">posedge</span>%s%clk_i)%s%$rose(ack_o)%s%|-&gt;%s%##3%s%dat_o[23:16]%s%==%s%counter;<br/>
+<a name="102"/><span style="color:red">%s%%s%%s%102%s%%s%</span><span class="keyword">endproperty</span><br/>
+<a name="103"/><span style="color:red">%s%%s%%s%103%s%%s%</span><br/>
+<a name="104"/><span style="color:red">%s%%s%%s%104%s%%s%</span><br/>
+<a name="105"/><span style="color:red">%s%%s%%s%105%s%%s%</span><span class="keyword">property</span>%s%byte4_check;<br/>
+<a name="106"/><span style="color:red">%s%%s%%s%106%s%%s%</span>@(<span class="keyattr">posedge</span>%s%clk_i)%s%$rose(ack_o)%s%|-&gt;%s%##4%s%dat_o[31:24]%s%==%s%counter;<br/>
+<a name="107"/><span style="color:red">%s%%s%%s%107%s%%s%</span><span class="keyword">endproperty</span><br/>
 <a name="108"/><span style="color:red">%s%%s%%s%108%s%%s%</span><br/>
-<a name="109"/><span style="color:red">%s%%s%%s%109%s%%s%</span>assert_txenable:%s%<span class="keyword">assert</span>%s%<span class="keyword">property</span>%s%(TxEnable)<br/>
-<a name="110"/><span style="color:red">%s%%s%%s%110%s%%s%</span>%s%%s%%s%%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tTxEnable%s%PASS::%s%TxEN=%b%s%%s%AbortFrame=%b%s%Frame=%b%s%%s%\n"</span>,%s%txen,%s%abortframe,%s%frame);<br/>
-<a name="111"/><span style="color:red">%s%%s%%s%111%s%%s%</span><span class="keyword">else</span>%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tTxEnable%s%FAIL::%s%TxEN=%b%s%%s%AbortFrame=%b%s%Frame=%b%s%%s%\n"</span>,%s%txen,%s%abortframe,%s%frame);<br/>
-<a name="112"/><span style="color:red">%s%%s%%s%112%s%%s%</span><br/>
-<a name="113"/><span style="color:red">%s%%s%%s%113%s%%s%</span>assert_notabortwhenflag:%s%<span class="keyword">assert</span>%s%<span class="keyword">property</span>%s%(notabortwhenflag)<br/>
-<a name="114"/><span style="color:red">%s%%s%%s%114%s%%s%</span>%s%%s%%s%%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tNotAbort%s%PASS::%s%flagDetect=%b%s%%s%AbortFrame=%b%s%%s%\n"</span>,%s%flagdetect,%s%rxabortframe);<br/>
-<a name="115"/><span style="color:red">%s%%s%%s%115%s%%s%</span><span class="keyword">else</span>%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tnotAbort%s%FAIL::%s%flagDetect=%b%s%%s%AbortFrame=%b%s%%s%\n"</span>,%s%flagdetect,%s%rxabortframe);<br/>
-<a name="116"/><span style="color:red">%s%%s%%s%116%s%%s%</span><br/>
-<a name="117"/><span style="color:red">%s%%s%%s%117%s%%s%</span>assert_detectflag:%s%<span class="keyword">assert</span>%s%<span class="keyword">property</span>%s%(detectFlag)<br/>
-<a name="118"/><span style="color:red">%s%%s%%s%118%s%%s%</span>%s%%s%%s%%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tdetectFlag%s%PASS::%s%flagDetect=%b%s%%s%ShiftReg=%b%s%%s%\n"</span>,%s%flagdetect,%s%shiftreg);<br/>
-<a name="119"/><span style="color:red">%s%%s%%s%119%s%%s%</span><span class="keyword">else</span>%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tdetectFlag%s%FAIL::%s%flagDetect=%b%s%%s%ShiftReg=%b%s%%s%\n"</span>,%s%flagdetect,%s%shiftreg);<br/>
-<a name="120"/><span style="color:red">%s%%s%%s%120%s%%s%</span><br/>
-<a name="121"/><span style="color:red">%s%%s%%s%121%s%%s%</span>assert_abortFrame:%s%<span class="keyword">assert</span>%s%<span class="keyword">property</span>%s%(abortFrame)<br/>
-<a name="122"/><span style="color:red">%s%%s%%s%122%s%%s%</span>%s%%s%%s%%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tdetectFlag%s%PASS::%s%abort=%b%s%%s%abortFrame=%b%s%%s%\n"</span>,%s%abort,%s%rxabortframe);<br/>
-<a name="123"/><span style="color:red">%s%%s%%s%123%s%%s%</span><span class="keyword">else</span>%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tdetectFlag%s%FAIL::%s%abort=%b%s%%s%abortFrame=%b%s%%s%\n"</span>,%s%abort,%s%rxabortframe);<br/>
+<a name="109"/><span style="color:red">%s%%s%%s%109%s%%s%</span><span class="comment">//%s%assert,%s%assume%s%statement</span><br/>
+<a name="110"/><span style="color:red">%s%%s%%s%110%s%%s%</span><span class="comment">//assert_byte1:%s%assert%s%property%s%(byte1_check);</span><br/>
+<a name="111"/><span style="color:red">%s%%s%%s%111%s%%s%</span>%t%<span class="comment">//$display($time,,,"\tByte%s%1%s%PASS::%s%DAT_O=%b%s%%s%counter=%b%s%%s%\n",%s%dat_o[7:0],counter[7:0]);</span><br/>
+<a name="112"/><span style="color:red">%s%%s%%s%112%s%%s%</span><span class="comment">//else%s%$display($time,,,"\tByte%s%1%s%FAIL::%s%DAT_O=%b%s%%s%counter=%b%s%\n",%s%dat_o[7:0],counter[7:0]);</span><br/>
+<a name="113"/><span style="color:red">%s%%s%%s%113%s%%s%</span><br/>
+<a name="114"/><span style="color:red">%s%%s%%s%114%s%%s%</span><span class="comment">//assert_byte2:%s%assert%s%property%s%(byte2_check);</span><br/>
+<a name="115"/><span style="color:red">%s%%s%%s%115%s%%s%</span>%t%<span class="comment">//$display($time,,,"\tByte%s%2%s%PASS::%s%DAT_O=%b%s%%s%counter=%b%s%%s%\n",%s%dat_o[15:8],$past(counter[7:0]));</span><br/>
+<a name="116"/><span style="color:red">%s%%s%%s%116%s%%s%</span><span class="comment">//else%s%$display($time,,,"\tByte%s%2%s%FAIL::%s%DAT_O=%b%s%%s%counter=%b%s%\n",%s%dat_o[15:8],$past(counter[7:0]));</span><br/>
+<a name="117"/><span style="color:red">%s%%s%%s%117%s%%s%</span><br/>
+<a name="118"/><span style="color:red">%s%%s%%s%118%s%%s%</span><span class="comment">//assert_byte3:%s%assert%s%property%s%(byte3_check);</span><br/>
+<a name="119"/><span style="color:red">%s%%s%%s%119%s%%s%</span>%t%<span class="comment">//$display($time,,,"\tByte%s%3%s%PASS::%s%DAT_O=%b%t%counter=%b%t%\n",%s%dat_o[23:16],$past(counter[7:0],2));</span><br/>
+<a name="120"/><span style="color:red">%s%%s%%s%120%s%%s%</span>%s%<span class="comment">//else%s%$display($time,,,"\tByte%s%3%s%FAIL::%s%DAT_O=%b%s%%s%counter=%b%s%\n",%s%dat_o[23:16],$past(counter[7:0],2));</span><br/>
+<a name="121"/><span style="color:red">%s%%s%%s%121%s%%s%</span><span class="comment">//assert_byte4:%s%assert%s%property%s%(byte4_check);</span><br/>
+<a name="122"/><span style="color:red">%s%%s%%s%122%s%%s%</span><span class="comment">//%t%$display($time,,,"\tByte%s%4%s%PASS::%s%DAT_O=%b%t%counter=%b%t%\n",%s%dat_o[31:24],$past(counter[7:0],3));</span><br/>
+<a name="123"/><span style="color:red">%s%%s%%s%123%s%%s%</span><span class="comment">//else%s%$display($time,,,"\tByte%s%4%s%FAIL::%s%DAT_O=%b%t%counter%s%=%s%%b%s%\n",dat_o[31:24],$past(counter[7:0],3));</span><br/>
 <a name="124"/><span style="color:red">%s%%s%%s%124%s%%s%</span><br/>
-<a name="125"/><span style="color:red">%s%%s%%s%125%s%%s%</span><span class="comment">//cover%s%statement</span><br/>
-<a name="126"/><span style="color:red">%s%%s%%s%126%s%%s%</span><span class="comment">//%s%Reuse%s%below%s%with%s%a%s%sequence%s%with%s%formal%s%parameters</span><br/>
-<a name="127"/><span style="color:red">%s%%s%%s%127%s%%s%</span><span class="keyword">cover</span>%s%<span class="keyword">property</span>%s%(@(<span class="keyattr">posedge</span>%s%txclk)%s%!tx%s%##1%s%tx%s%[*6]%s%##1%s%!tx)<br/>
-<a name="128"/><span style="color:red">%s%%s%%s%128%s%%s%</span>%t%$display($stime,,,<span class="literal">"\tTX%s%flag,%s%frame%s%start\n"</span>);%s%<span class="comment">//%s%Looking%s%for%s%01111110</span><br/>
-<a name="129"/><span style="color:red">%s%%s%%s%129%s%%s%</span><span class="keyword">cover</span>%s%<span class="keyword">property</span>%s%(@(<span class="keyattr">posedge</span>%s%rxclk)%s%!rx%s%##1%s%rx%s%[*6]%s%##1%s%!rx)<br/>
-<a name="130"/><span style="color:red">%s%%s%%s%130%s%%s%</span>%t%$display($stime,,,<span class="literal">"\tRX%s%flag,%s%frame%s%start\n"</span>);%s%<span class="comment">//%s%Looking%s%for%s%01111110</span><br/>
-<a name="131"/><span style="color:red">%s%%s%%s%131%s%%s%</span><br/>
+<a name="125"/><span style="color:red">%s%%s%%s%125%s%%s%</span>assert_txenable:%s%<span class="keyword">assert</span>%s%<span class="keyword">property</span>%s%(TxEnable)<br/>
+<a name="126"/><span style="color:red">%s%%s%%s%126%s%%s%</span>%s%%s%%s%%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tTxEnable%s%PASS::%s%TxEN=%b%s%%s%AbortFrame=%b%s%Frame=%b%s%%s%\n"</span>,%s%txen,%s%abortframe,%s%frame);<br/>
+<a name="127"/><span style="color:red">%s%%s%%s%127%s%%s%</span><span class="keyword">else</span>%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tTxEnable%s%FAIL::%s%TxEN=%b%s%%s%AbortFrame=%b%s%Frame=%b%s%%s%\n"</span>,%s%txen,%s%abortframe,%s%frame);<br/>
+<a name="128"/><span style="color:red">%s%%s%%s%128%s%%s%</span><br/>
+<a name="129"/><span style="color:red">%s%%s%%s%129%s%%s%</span>assert_notabortwhenflag:%s%<span class="keyword">assert</span>%s%<span class="keyword">property</span>%s%(notabortwhenflag)<br/>
+<a name="130"/><span style="color:red">%s%%s%%s%130%s%%s%</span>%s%%s%%s%%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tNotAbort%s%PASS::%s%flagDetect=%b%s%%s%AbortFrame=%b%s%%s%\n"</span>,%s%flagdetect,%s%rxabortframe);<br/>
+<a name="131"/><span style="color:red">%s%%s%%s%131%s%%s%</span><span class="keyword">else</span>%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tnotAbort%s%FAIL::%s%flagDetect=%b%s%%s%AbortFrame=%b%s%%s%\n"</span>,%s%flagdetect,%s%rxabortframe);<br/>
 <a name="132"/><span style="color:red">%s%%s%%s%132%s%%s%</span><br/>
-<a name="133"/><span style="color:red">%s%%s%%s%133%s%%s%</span><br/>
-<a name="134"/><span style="color:red">%s%%s%%s%134%s%%s%</span><br/>
-<a name="135"/><span style="color:red">%s%%s%%s%135%s%%s%</span><span class="keyword">endmodule</span><br/>
+<a name="133"/><span style="color:red">%s%%s%%s%133%s%%s%</span>assert_detectflag:%s%<span class="keyword">assert</span>%s%<span class="keyword">property</span>%s%(detectFlag)<br/>
+<a name="134"/><span style="color:red">%s%%s%%s%134%s%%s%</span>%s%%s%%s%%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tdetectFlag%s%PASS::%s%flagDetect=%b%s%%s%ShiftReg=%b%s%%s%\n"</span>,%s%flagdetect,%s%shiftreg);<br/>
+<a name="135"/><span style="color:red">%s%%s%%s%135%s%%s%</span><span class="keyword">else</span>%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tdetectFlag%s%FAIL::%s%flagDetect=%b%s%%s%ShiftReg=%b%s%%s%\n"</span>,%s%flagdetect,%s%shiftreg);<br/>
+<a name="136"/><span style="color:red">%s%%s%%s%136%s%%s%</span><br/>
+<a name="137"/><span style="color:red">%s%%s%%s%137%s%%s%</span>assert_abortFrame:%s%<span class="keyword">assert</span>%s%<span class="keyword">property</span>%s%(abortFrame)<br/>
+<a name="138"/><span style="color:red">%s%%s%%s%138%s%%s%</span>%s%%s%%s%%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tdetectFlag%s%PASS::%s%abort=%b%s%%s%abortFrame=%b%s%%s%\n"</span>,%s%abort,%s%rxabortframe);<br/>
+<a name="139"/><span style="color:red">%s%%s%%s%139%s%%s%</span><span class="keyword">else</span>%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tdetectFlag%s%FAIL::%s%abort=%b%s%%s%abortFrame=%b%s%%s%\n"</span>,%s%abort,%s%rxabortframe);<br/>
+<a name="140"/><span style="color:red">%s%%s%%s%140%s%%s%</span><br/>
+<a name="141"/><span style="color:red">%s%%s%%s%141%s%%s%</span>assert_lemon:%s%<span class="keyword">assert</span>%s%<span class="keyword">property</span>%s%(writeenable);<br/>
+<a name="142"/><span style="color:red">%s%%s%%s%142%s%%s%</span><span class="comment">//%s%%s%%s%%s%$display($time,,,"\tWrite%s%enable%s%PASS::%s%wr=%b%s%%s%data_out=%b%s%%s%\n",%s%$past(wr),%s%$past(data_out));</span><br/>
+<a name="143"/><span style="color:red">%s%%s%%s%143%s%%s%</span><span class="comment">//else%s%$display($time,,,"\tWrite%s%enbale%s%FAIL::%s%wr=%b%s%%s%data_out=%b%s%%s%\n",%s%$past(wr),%s%$past(data_out));</span><br/>
+<a name="144"/><span style="color:red">%s%%s%%s%144%s%%s%</span><br/>
+<a name="145"/><span style="color:red">%s%%s%%s%145%s%%s%</span>assert_datain_dataout:%s%<span class="keyword">assert</span>%s%<span class="keyword">property</span>%s%(setDataOut)<br/>
+<a name="146"/><span style="color:red">%s%%s%%s%146%s%%s%</span>%s%%s%%s%%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tSet%s%Data%s%Out%s%PASS::%s%wr=%b%s%%s%data_out=%b%s%%s%\n"</span>,%s%$past(wr),%s%$past(data_out));<br/>
+<a name="147"/><span style="color:red">%s%%s%%s%147%s%%s%</span><span class="keyword">else</span>%s%$display($<span class="keyword">time</span>,,,<span class="literal">"\tSet%s%Data%s%Out%s%FAIL::%s%wr=%b%s%%s%data_out=%b%s%%s%\n"</span>,%s%$past(wr),%s%$past(data_out));<br/>
+<a name="148"/><span style="color:red">%s%%s%%s%148%s%%s%</span><br/>
+<a name="149"/><span style="color:red">%s%%s%%s%149%s%%s%</span><span class="comment">//cover%s%statement</span><br/>
+<a name="150"/><span style="color:red">%s%%s%%s%150%s%%s%</span><span class="comment">//%s%Reuse%s%below%s%with%s%a%s%sequence%s%with%s%formal%s%parameters</span><br/>
+<a name="151"/><span style="color:red">%s%%s%%s%151%s%%s%</span><span class="keyword">cover</span>%s%<span class="keyword">property</span>%s%(@(<span class="keyattr">posedge</span>%s%txclk)%s%!tx%s%##1%s%tx%s%[*6]%s%##1%s%!tx)<br/>
+<a name="152"/><span style="color:red">%s%%s%%s%152%s%%s%</span>%t%$display($stime,,,<span class="literal">"\tTX%s%flag,%s%frame%s%start\n"</span>);%s%<span class="comment">//%s%Looking%s%for%s%01111110</span><br/>
+<a name="153"/><span style="color:red">%s%%s%%s%153%s%%s%</span><span class="keyword">cover</span>%s%<span class="keyword">property</span>%s%(@(<span class="keyattr">posedge</span>%s%rxclk)%s%!rx%s%##1%s%rx%s%[*6]%s%##1%s%!rx)<br/>
+<a name="154"/><span style="color:red">%s%%s%%s%154%s%%s%</span>%t%$display($stime,,,<span class="literal">"\tRX%s%flag,%s%frame%s%start\n"</span>);%s%<span class="comment">//%s%Looking%s%for%s%01111110</span><br/>
+<a name="155"/><span style="color:red">%s%%s%%s%155%s%%s%</span><br/>
+<a name="156"/><span style="color:red">%s%%s%%s%156%s%%s%</span><br/>
+<a name="157"/><span style="color:red">%s%%s%%s%157%s%%s%</span><br/>
+<a name="158"/><span style="color:red">%s%%s%%s%158%s%%s%</span><br/>
+<a name="159"/><span style="color:red">%s%%s%%s%159%s%%s%</span><span class="keyword">endmodule</span><br/>
 </tt>
 <script type="text/javascript" src="../scripts/buildsrcpage.js"></script>
   
